@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "treeedb",
+    "treeedb-java",
+]

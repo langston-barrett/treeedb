@@ -1,0 +1,33 @@
+[package]
+name = "treeedb-java"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Datalog facts from Java source code"
+keywords = ["datalog", "java", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.0", features = ["derive"] }
+treeedb = { version = "0.1.0", path = "../treeedb" }
+tree-sitter = "0.20"
+tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tree-sitter-java', ref = "88339390aa70ca6784ecac82c34affa456dc6382" }
+
+[profile.release]
+lto = "thin"
+
+# TODO(lb): Enable when this hits stable
+# https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
+# [dev-dependencies]
+# cargo-deb = { version = "1", artifact = "bin" }
+
+# TODO(lb):
+# [package.metadata.deb]
+# assets = [
+#     ["../README.md", "usr/share/doc/treeedb-java/README.md", "644"],
+#     ["target/x86_64-unknown-linux-musl/release/treedb-java", "usr/bin/", "755"],
+# ]

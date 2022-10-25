@@ -1,0 +1,15 @@
+[package]
+name = "treeedb"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Datalog facts from tree-sitter parse trees"
+keywords = ["datalog", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+csv = "1"
+tree-sitter = "0.20"
