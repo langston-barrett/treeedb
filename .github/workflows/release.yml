@@ -1,0 +1,31 @@
+on:
+  push:
+    tags:
+    - 'v*'
+
+name: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deps
+      run: |
+        sudo apt-get install -y musl-tools
+        rustup target add x86_64-unknown-linux-musl
+
+    - name: Build static executables
+      run: |
+        make static
+        cp target/x86_64-unknown-linux-musl/release/treeedb-java .
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "treeedb-java"
+        artifactErrorsFailBuild: true
+        # TODO(lb):
+        # body: ""
+        draft: true
+        token: ${{ secrets.GITHUB_TOKEN }}

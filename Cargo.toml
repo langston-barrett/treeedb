@@ -4,3 +4,6 @@ members = [
     "treeedb",
     "treeedb-java",
 ]
+
+[profile.release]
+lto = "thin"

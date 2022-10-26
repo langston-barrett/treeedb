@@ -17,9 +17,6 @@ treeedb = { version = "0.1.0", path = "../treeedb" }
 tree-sitter = "0.20"
 tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tree-sitter-java', ref = "88339390aa70ca6784ecac82c34affa456dc6382" }
 
-[profile.release]
-lto = "thin"
-
 # TODO(lb): Enable when this hits stable
 # https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
 # [dev-dependencies]
