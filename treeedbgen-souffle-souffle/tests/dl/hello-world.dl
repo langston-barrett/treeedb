@@ -1,0 +1,2 @@
+.decl hello_world(h: symbol)
+hello_world("Hello, World!").

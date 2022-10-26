@@ -1,8 +1,8 @@
 [package]
-name = "treeedb-java"
+name = "treeedbgen-souffle-souffle"
 version = "0.1.0"
 edition = "2021"
-description = "Generate Datalog facts from Java source code"
+description = "Generate Soufflé types and relations from the Soufflé tree-sitter grammar"
 keywords = ["datalog", "java", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
@@ -11,9 +11,9 @@ homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
-anyhow = "1.0"
-treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
-tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tree-sitter-java' }
+anyhow = "1"
+treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+tree-sitter-souffle = { version = "0.4.0" }
 
 # TODO(lb): Enable when this hits stable
 # https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
@@ -26,3 +26,8 @@ tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tre
 #     ["../README.md", "usr/share/doc/treeedb-java/README.md", "644"],
 #     ["target/x86_64-unknown-linux-musl/release/treedb-java", "usr/bin/", "755"],
 # ]
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "2.1"
+tempfile = "3"

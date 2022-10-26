@@ -11,6 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Run Datalog generators
+      run: |
+        cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl
+        cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl
+
     - name: Deps
       run: |
         sudo apt-get install -y musl-tools
@@ -20,12 +25,11 @@ jobs:
       run: |
         make static
         cp target/x86_64-unknown-linux-musl/release/treeedb-java .
+        cp target/x86_64-unknown-linux-musl/release/treeedb-souffle .
 
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "treeedb-java"
+        artifacts: "treeedb-java,treeedb-java.dl,treeedb-souffle,treeedb-souffle.dl"
         artifactErrorsFailBuild: true
-        # TODO(lb):
-        # body: ""
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}

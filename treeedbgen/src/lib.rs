@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 
 /// node-types.json
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Node {
     #[serde(rename(deserialize = "type", serialize = "type"))]
     pub ty: String,
@@ -14,18 +14,18 @@ pub struct Node {
     pub subtypes: Vec<Subtype>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Field {
-    multiple: bool,
-    required: bool,
-    types: Vec<Subtype>,
+    pub multiple: bool,
+    pub required: bool,
+    pub types: Vec<Subtype>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Subtype {
     #[serde(rename(deserialize = "type", serialize = "type"))]
-    ty: String,
-    named: bool,
+    pub ty: String,
+    pub named: bool,
 }
 
 pub fn nodes(node_types_json_str: &str) -> Result<Vec<Node>, serde_json::Error> {
