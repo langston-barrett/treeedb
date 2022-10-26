@@ -69,7 +69,7 @@ fn node_with_fields(
             writeln!(w, "{}", types.join(" | "))?;
         }
 
-        let field_relation_name = format!("{}{}_{}", config.relation_prefix, &node.ty, field_name);
+        let field_relation_name = format!("{}{}_{}_f", config.relation_prefix, &node.ty, field_name);
         writeln!(
             w,
             ".decl {}(x: {}{}, y: {})",
