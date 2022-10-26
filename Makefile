@@ -29,6 +29,15 @@ lint:
 	  -D warnings \
 	  -D clippy::unnecessary_wraps
 
+# requires: apt-get install -y musl-tools
+# requires: rustup target add x86_64-unknown-linux-musl
+.PHONY: static
+static:
+	$(CARGO) build $(CARGO_FLAGS) \
+	  --bins \
+	  --release \
+	  --target=x86_64-unknown-linux-musl
+
 .PHONY: test
 test:
 	$(CARGO) test $(CARGO_FLAGS)
