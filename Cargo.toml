@@ -3,9 +3,11 @@
 members = [
     "treeedb",
     "treeedb-java",
+    "treeedb-souffle",
     "treeedbgen",
     "treeedbgen-souffle",
     "treeedbgen-souffle-java",
+    "treeedbgen-souffle-souffle",
 ]
 
 [profile.release]

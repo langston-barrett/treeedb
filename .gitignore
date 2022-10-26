@@ -2,5 +2,6 @@
 /target
 
 /*.csv
+/*.dl
 /*.java
 /*.tsv

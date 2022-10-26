@@ -1,9 +1,9 @@
 [package]
-name = "treeedb-java"
+name = "treeedb-souffle"
 version = "0.1.0"
 edition = "2021"
-description = "Generate Datalog facts from Java source code"
-keywords = ["datalog", "java", "parsing", "souffle"]
+description = "Generate Datalog facts from Soufflé source code"
+keywords = ["datalog", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
@@ -13,7 +13,7 @@ repository = "https://github.com/langston-barrett/treeedb"
 [dependencies]
 anyhow = "1.0"
 treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
-tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tree-sitter-java' }
+tree-sitter-souffle = { version = "0.4.0" }
 
 # TODO(lb): Enable when this hits stable
 # https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
