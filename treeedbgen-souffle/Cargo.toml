@@ -1,0 +1,13 @@
+[package]
+name = "treeedbgen-souffle"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Soufflé types and relations from tree-sitter grammars"
+keywords = ["datalog", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
