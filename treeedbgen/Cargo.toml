@@ -2,8 +2,8 @@
 name = "treeedbgen"
 version = "0.1.0"
 edition = "2021"
-description = "Generate consumer source code from tree-sitter grammars"
-keywords = ["datalog", "parsing", "souffle"]
+description = "Parse node-types.json from a tree-sitter grammar"
+keywords = ["parsing", "tree-sitter"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
