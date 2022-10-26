@@ -1,5 +1,5 @@
 [package]
-name = "treeedb-souffle-java"
+name = "treeedbgen-souffle-java"
 version = "0.1.0"
 edition = "2021"
 description = "Generate Soufflé types and relations from the Java tree-sitter grammar"
@@ -11,8 +11,8 @@ homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
-# anyhow = "1.0"
-clap = { version = "4.0", features = ["derive"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
 treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle" }
 tree-sitter = "0.20"
 tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tree-sitter-java', ref = "88339390aa70ca6784ecac82c34affa456dc6382" }

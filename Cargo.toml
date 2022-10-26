@@ -3,6 +3,7 @@
 members = [
     "treeedb",
     "treeedb-java",
+    "treeedbgen",
     "treeedbgen-souffle",
     "treeedbgen-souffle-java",
 ]
