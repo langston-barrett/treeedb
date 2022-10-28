@@ -1,0 +1,26 @@
+// To test:
+// cargo build
+// cd examples/java
+// ../../target/debug/treeedbgen-souffle-java --prefix java -o treeedb-java.dl
+// ../../target/debug/treeedb-java Main.java
+// souffle const-binop.dl
+
+#include "treeedb-java.dl"
+
+.decl const_binop(expr: JavaBinaryExpression)
+
+const_binop(expr) :-
+  java_binary_expression(expr),
+  java_binary_expression_left_f(expr, l),
+  java_binary_expression_right_f(expr, r),
+  java_decimal_integer_literal(l),
+  java_decimal_integer_literal(r).
+
+.decl show_const_binop(text: JavaNodeText)
+
+show_const_binop(text) :-
+  const_binop(expr),
+  java_node_text(expr, text).
+
+.output const_binop(IO=stdout)
+.output show_const_binop(IO=stdout)

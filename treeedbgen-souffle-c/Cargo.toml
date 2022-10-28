@@ -1,0 +1,33 @@
+[package]
+name = "treeedbgen-souffle-c"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Soufflé types and relations from the C tree-sitter grammar"
+keywords = ["datalog", "c", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1"
+treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+tree-sitter-c = { version = "0.20" }
+
+# TODO(lb): Enable when this hits stable
+# https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
+# [dev-dependencies]
+# cargo-deb = { version = "1", artifact = "bin" }
+
+# TODO(lb):
+# [package.metadata.deb]
+# assets = [
+#     ["../README.md", "usr/share/doc/treeedb-/README.md", "644"],
+#     ["target/x86_64-unknown-linux-musl/release/treedb-", "usr/bin/", "755"],
+# ]
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "2.1"
+tempfile = "3"

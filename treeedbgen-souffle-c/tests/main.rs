@@ -6,17 +6,17 @@ use tempfile::NamedTempFile;
 
 #[test]
 fn gen() -> Result<(), Box<dyn std::error::Error>> {
-    let mut cmd = Command::cargo_bin("treeedbgen-souffle-java")?;
+    let mut cmd = Command::cargo_bin("treeedbgen-souffle-c")?;
     let tmp = NamedTempFile::new()?;
     cmd.arg("-o").arg(tmp.path());
-    cmd.arg("--prefix=java").arg("--printsize");
+    cmd.arg("--prefix=c").arg("--printsize");
     cmd.assert()
         .success()
         .stdout(predicate::str::is_empty())
         .stderr(predicate::str::is_empty());
 
-    let mut cmd = Command::cargo_bin("treeedb-java")?;
-    cmd.arg("tests/java/HelloWorld.java");
+    let mut cmd = Command::cargo_bin("treeedb-c")?;
+    cmd.arg("tests/c/hello-world.c");
     cmd.assert()
         .success()
         .stdout(predicate::str::is_empty())
@@ -28,7 +28,7 @@ fn gen() -> Result<(), Box<dyn std::error::Error>> {
     // souffle
     //     .assert()
     //     .success()
-    //     .stdout(predicate::str::contains("java_node\t23"))
+    //     .stdout(predicate::str::contains("c_node\t17"))
     //     .stderr(predicate::str::is_empty());
     Ok(())
 }

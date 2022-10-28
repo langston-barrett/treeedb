@@ -30,7 +30,7 @@ impl FactConsumer for WideCsvConsumer {
         Ok(())
     }
 
-    fn node(&mut self, node: &Node) -> Result<(), Self::Err> {
+    fn node(&mut self, node: &Node, source: &[u8]) -> Result<(), Self::Err> {
         let start = node.start_position();
         let end = node.end_position();
         self.node.write_record(&[
@@ -46,7 +46,11 @@ impl FactConsumer for WideCsvConsumer {
             &start.column.to_string(),
             &end.row.to_string(),
             &end.column.to_string(),
-            // TODO(lb): Text!
+            &node
+                .utf8_text(source)
+                .expect("Source file was not UTF-8")
+                .to_string()
+                .replace('\n', "\\n"),
         ])?;
         Ok(())
     }

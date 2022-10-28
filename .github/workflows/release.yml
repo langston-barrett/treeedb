@@ -1,5 +1,7 @@
 on:
   push:
+    branches:
+    - release*
     tags:
     - 'v*'
 
@@ -13,6 +15,7 @@ jobs:
 
     - name: Run Datalog generators
       run: |
+        cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
         cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl --prefix java
         cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl --prefix dl
 
@@ -25,12 +28,20 @@ jobs:
       run: |
         make static
         mkdir exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-c exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-java exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-souffle exe/
 
     - uses: ncipollo/release-action@v1
+      if: ${{ startsWith(github.ref, 'refs/tags/v') }}
       with:
-        artifacts: "exe/treeedb-java,treeedb-java.dl,exe/treeedb-souffle,treeedb-souffle.dl"
+        artifacts: >
+          exe/treeedb-c,
+          exe/treeedb-java,
+          exe/treeedb-souffle,
+          treeedb-c.dl,
+          treeedb-java.dl,
+          treeedb-souffle.dl,
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}

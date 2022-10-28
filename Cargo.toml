@@ -2,10 +2,12 @@
 
 members = [
     "treeedb",
+    "treeedb-c",
     "treeedb-java",
     "treeedb-souffle",
     "treeedbgen",
     "treeedbgen-souffle",
+    "treeedbgen-souffle-c",
     "treeedbgen-souffle-java",
     "treeedbgen-souffle-souffle",
 ]
