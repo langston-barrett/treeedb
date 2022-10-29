@@ -11,7 +11,7 @@ use tree_sitter::Node;
 //     Err(#[from] E),
 // }
 
-// TODO(lb): Take in a source file name as well
+// TODO(#19): Take in a source file name as well
 pub trait FactConsumer {
     type Err;
 

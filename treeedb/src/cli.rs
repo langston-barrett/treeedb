@@ -49,8 +49,6 @@ fn handle_parse_errors(path: &str, tree: &Tree, on_parse_error: &OnParseError) {
 /// Generate Datalog facts from source code
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
-// TODO(lb): Option to raise an error on a parse failure
-//
 // TODO(lb): Output directory, default is current directory
 // #[arg(short, long, default_value = None)]
 // pub output: Option<String>,

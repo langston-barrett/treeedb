@@ -1,3 +1,5 @@
+// TODO(#14)
+
 use std::fs;
 use std::fs::File;
 use std::io;
@@ -30,7 +32,6 @@ impl FactConsumer for NarrowCsvConsumer {
         _name: &'static str,
         _child: &Node,
     ) -> Result<(), Self::Err> {
-        // TODO(lb)
         Ok(())
     }
 

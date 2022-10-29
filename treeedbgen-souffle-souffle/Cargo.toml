@@ -15,18 +15,6 @@ anyhow = "1"
 treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
 tree-sitter-souffle = { version = "0.4.0" }
 
-# TODO(lb): Enable when this hits stable
-# https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
-# [dev-dependencies]
-# cargo-deb = { version = "1", artifact = "bin" }
-
-# TODO(lb):
-# [package.metadata.deb]
-# assets = [
-#     ["../README.md", "usr/share/doc/treeedb-java/README.md", "644"],
-#     ["target/x86_64-unknown-linux-musl/release/treedb-java", "usr/bin/", "755"],
-# ]
-
 [dev-dependencies]
 assert_cmd = "2.0"
 predicates = "2.1"

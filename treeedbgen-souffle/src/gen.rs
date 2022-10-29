@@ -1,6 +1,6 @@
 // TODO(lb): Refactor this horrible mess!
-// TODO(lb): Wide vs narrow
-// TODO(lb): Case conventions as input?
+// TODO(#14): Support "narrow" relational schema
+// TODO(#17): Configurable case conventions
 // TODO(lb): Optional extra spaces
 
 use std::io;
@@ -69,7 +69,7 @@ fn node_with_fields(
             writeln!(w, "{}", types.join(" | "))?;
         }
 
-        // TODO(lb): Configurable field prefix/suffix
+        // TODO(#18): Configurable field prefix/suffix
         let field_relation_name =
             format!("{}{}_{}_f", config.relation_prefix, &node.ty, field_name);
         writeln!(
@@ -211,7 +211,7 @@ fn declare_node(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenErr
         ]
         .join(", ")
     )?;
-    // TODO(lb): Other inline relations like this one
+    // TODO(#20): Other inline relations like this one
     writeln!(
         w,
         ".decl {}node_text(x: {}Node, y: {}NodeText) inline",

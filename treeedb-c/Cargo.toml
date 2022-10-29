@@ -14,15 +14,3 @@ repository = "https://github.com/langston-barrett/treeedb"
 anyhow = "1.0"
 treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
 tree-sitter-c = { version = "0.20" }
-
-# TODO(lb): Enable when this hits stable
-# https://doc.rust-lang.org/cargo/reference/unstable.html#artifact-dependencies
-# [dev-dependencies]
-# cargo-deb = { version = "1", artifact = "bin" }
-
-# TODO(lb):
-# [package.metadata.deb]
-# assets = [
-#     ["../README.md", "usr/share/doc/treeedb-c/README.md", "644"],
-#     ["target/x86_64-unknown-linux-musl/release/treedb-c", "usr/bin/", "755"],
-# ]
