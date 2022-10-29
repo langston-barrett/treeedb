@@ -64,7 +64,7 @@ jobs:
 
     - name: Publish to crates.io
       env:
-        CRATES_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
+        CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
         # Only push on actual release tags
         PUSH: ${{ startsWith(github.ref, 'refs/tags/v') }}
       run: |
