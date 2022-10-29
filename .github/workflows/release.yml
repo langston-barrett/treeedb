@@ -16,6 +16,7 @@ jobs:
     - name: Run Datalog generators
       run: |
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
+        cargo run --bin treeedbgen-souffle-csharp -- --output treeedb-csharp.dl --prefix csharp
         cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl --prefix java
         cargo run --bin treeedbgen-souffle-javascript -- --output treeedb-javascript.dl --prefix js
         cargo run --bin treeedbgen-souffle-rust -- --output treeedb-rust.dl --prefix rs
@@ -32,6 +33,7 @@ jobs:
         make static
         mkdir exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-c exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-csharp exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-java exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-javascript exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-rust exe/
@@ -43,12 +45,14 @@ jobs:
       with:
         artifacts: >
           exe/treeedb-c,
+          exe/treeedb-csharp,
           exe/treeedb-java,
           exe/treeedb-javascript,
           exe/treeedb-rust,
           exe/treeedb-souffle,
           exe/treeedb-swift,
           treeedb-c.dl,
+          treeedb-csharp.dl,
           treeedb-java.dl,
           treeedb-javascript.dl,
           treeedb-rust.dl,
