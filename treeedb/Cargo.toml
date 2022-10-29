@@ -1,6 +1,6 @@
 [package]
 name = "treeedb"
-version = "0.1.0-rc.5"
+version = "0.1.0"
 edition = "2021"
 description = "Generate Datalog facts from tree-sitter parse trees"
 keywords = ["datalog", "parsing", "souffle"]

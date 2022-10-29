@@ -2,15 +2,19 @@
 
 set -e
 
+# TODO(#23): Upload Java crates
+
+# See #22 for discussion on the rate limit.
+
 cargo publish --package treeedb
-sleep 10
+sleep 60
 cargo publish --package treeedbgen
-sleep 10
+sleep 60
 cargo publish --package treeedbgen-souffle
-sleep 10
-for lang in c csharp java javascript rust souffle swift; do
+sleep 60
+for lang in c csharp javascript rust souffle swift; do
   cargo publish --package treeedb-${lang}
-  sleep 10
+  sleep 60
   cargo publish --package treeedbgen-souffle-${lang}
-  sleep 10
+  sleep 60
 done

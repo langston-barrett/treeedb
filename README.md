@@ -56,6 +56,9 @@ cargo install treeedb-<LANG> treeedbgen-souffle-<LANG>
 This will install binaries to `~/.cargo/bin`. To generate the Datalog file, run
 the `treeedbgen-souffle-<LANG>` binary.
 
+Unfortunately, the Java-related binaries [are not yet available on
+crates.io][#23].
+
 ### Build From Source
 
 To build from source, you'll need the Rust compiler and the [Cargo][cargo] build
@@ -225,6 +228,7 @@ bash scripts/add-language.sh python Python
 
 [#3]: https://github.com/langston-barrett/treeedb/issues/3
 [#9]: https://github.com/langston-barrett/treeedb/pull/9
+[#23]: https://github.com/langston-barrett/treeedb/issues/23
 [cargo]: https://doc.rust-lang.org/cargo/
 [crates-io]: https://crates.io/
 [cclyzerpp-fact-generator]: https://galoisinc.github.io/cclyzerpp/architecture.html#the-fact-generator
