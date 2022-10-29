@@ -8,6 +8,7 @@ and emits facts that populate those relations.
 `treeedb` currently supports analysis of these languages:
 
 - C
+- C#
 - Java
 - JavaScript
 - Rust
@@ -153,9 +154,11 @@ fitting in the same niche as these tools.
 
 - [`treeedb`](./treeedb): Generate Datalog facts from tree-sitter parse trees
 - [`treeedb-c`](./treeedb-c): Generate Datalog facts from C source code
+- [`treeedb-csharp`](./treeedb-csharp): Generate Datalog facts from C# source code
 - [`treeedbgen`](./treeedbgen): Parse node-types.json from a tree-sitter grammar
 - [`treeedbgen-souffle`](./treeedbgen-souffle): Generate Soufflé types and relations from tree-sitter grammars
 - [`treeedbgen-souffle-c`](./treeedbgen-souffle-c): Generate Soufflé types and relations from the C tree-sitter grammar
+- [`treeedbgen-souffle-csharp`](./treeedbgen-souffle-csharp): Generate Soufflé types and relations from the C# tree-sitter grammar
 - [`treeedbgen-souffle-java`](./treeedbgen-souffle-java): Generate Soufflé types and relations from the Java tree-sitter grammar
 - [`treeedbgen-souffle-javascript`](./treeedbgen-souffle-javascript): Generate Soufflé types and relations from the JavaScript tree-sitter grammar
 - [`treeedbgen-souffle-rust`](./treeedbgen-souffle-rust): Generate Soufflé types and relations from the Rust tree-sitter grammar
