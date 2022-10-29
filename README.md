@@ -9,7 +9,10 @@ and emits facts that populate those relations.
 
 - C
 - Java
+- JavaScript
+- Rust
 - Soufflé
+- Swift
 
 `treeedb`'s parsers and ASTs are based on [tree-sitter][tree-sitter] grammars,
 and it's very easy to [add support](#adding-a-language) for any [language with a
@@ -154,9 +157,15 @@ fitting in the same niche as these tools.
 - [`treeedbgen-souffle`](./treeedbgen-souffle): Generate Soufflé types and relations from tree-sitter grammars
 - [`treeedbgen-souffle-c`](./treeedbgen-souffle-c): Generate Soufflé types and relations from the C tree-sitter grammar
 - [`treeedbgen-souffle-java`](./treeedbgen-souffle-java): Generate Soufflé types and relations from the Java tree-sitter grammar
+- [`treeedbgen-souffle-javascript`](./treeedbgen-souffle-javascript): Generate Soufflé types and relations from the JavaScript tree-sitter grammar
+- [`treeedbgen-souffle-rust`](./treeedbgen-souffle-rust): Generate Soufflé types and relations from the Rust tree-sitter grammar
 - [`treeedbgen-souffle-souffle`](./treeedbgen-souffle-souffle): Generate Soufflé types and relations from the Soufflé tree-sitter grammar
+- [`treeedbgen-souffle-swift`](./treeedbgen-souffle-swift): Generate Soufflé types and relations from the Swift tree-sitter grammar
 - [`treeedb-java`](./treeedb-java): Generate Datalog facts from Java source code
+- [`treeedb-javascript`](./treeedb-javascript): Generate Datalog facts from JavaScript source code
+- [`treeedb-rust`](./treeedb-rust): Generate Datalog facts from Rust source code
 - [`treeedb-souffle`](./treeedb-souffle): Generate Datalog facts from Soufflé source code
+- [`treeedb-swift`](./treeedb-swift): Generate Datalog facts from Swift source code
 
 ## Contributing
 
