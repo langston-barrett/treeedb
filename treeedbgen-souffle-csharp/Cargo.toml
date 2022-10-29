@@ -1,6 +1,6 @@
 [package]
 name = "treeedbgen-souffle-csharp"
-version = "0.1.0-rc.3"
+version = "0.1.0-rc.4"
 edition = "2021"
 description = "Generate Soufflé types and relations from the C# tree-sitter grammar"
 keywords = ["datalog", "csharp", "parsing", "souffle"]
@@ -12,7 +12,7 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1"
-treeedbgen-souffle = { version = "0.1.0-rc.3", path = "../treeedbgen-souffle", features = ["cli"] }
+treeedbgen-souffle = { version = "0.1.0-rc.4", path = "../treeedbgen-souffle", features = ["cli"] }
 tree-sitter-c-sharp = { version = "0.20", git = "https://github.com/tree-sitter/tree-sitter-c-sharp" }
 
 [dev-dependencies]

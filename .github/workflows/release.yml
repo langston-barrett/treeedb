@@ -57,9 +57,12 @@ jobs:
         if [[ ${PUSH} == true ]]; then
           cargo publish --token ${CRATES_IO_TOKEN} --package treeedb
           cargo publish --token ${CRATES_IO_TOKEN} --package treeedbgen
+          cargo update
           cargo publish --token ${CRATES_IO_TOKEN} --package treeedbgen-souffle
           for lang in c csharp java javascript rust souffle swift; do
+            cargo update
             cargo publish --token ${CRATES_IO_TOKEN} --package treeedb-${lang}
+            cargo update
             cargo publish --token ${CRATES_IO_TOKEN} --package treeedbgen-souffle-${lang}
           done
         else

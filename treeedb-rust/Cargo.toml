@@ -1,6 +1,6 @@
 [package]
 name = "treeedb-rust"
-version = "0.1.0-rc.3"
+version = "0.1.0-rc.4"
 edition = "2021"
 description = "Generate Datalog facts from Rust source code"
 keywords = ["datalog", "rust", "parsing", "souffle"]
@@ -12,5 +12,5 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1.0"
-treeedb = { version = "0.1.0-rc.3", path = "../treeedb", features = ["cli"] }
+treeedb = { version = "0.1.0-rc.4", path = "../treeedb", features = ["cli"] }
 tree-sitter-rust = { version = "0.20" }
