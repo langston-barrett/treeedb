@@ -18,8 +18,9 @@ jobs:
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
         cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl --prefix java
         cargo run --bin treeedbgen-souffle-javascript -- --output treeedb-javascript.dl --prefix js
-        cargo run --bin treeedbgen-rust-rust -- --output treeedb-rust.dl --prefix dl
+        cargo run --bin treeedbgen-souffle-rust -- --output treeedb-rust.dl --prefix rs
         cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl --prefix dl
+        cargo run --bin treeedbgen-souffle-swift -- --output treeedb-swift.dl --prefix swift
 
     - name: Deps
       run: |
@@ -35,6 +36,7 @@ jobs:
         cp target/x86_64-unknown-linux-musl/release/treeedb-javascript exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-rust exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-souffle exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-swift exe/
 
     - uses: ncipollo/release-action@v1
       if: ${{ startsWith(github.ref, 'refs/tags/v') }}
@@ -45,11 +47,13 @@ jobs:
           exe/treeedb-javascript,
           exe/treeedb-rust,
           exe/treeedb-souffle,
+          exe/treeedb-swift,
           treeedb-c.dl,
           treeedb-java.dl,
           treeedb-javascript.dl,
           treeedb-rust.dl,
           treeedb-souffle.dl,
+          treeedb-swift.dl,
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}
