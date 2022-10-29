@@ -15,21 +15,19 @@ fn gen() -> Result<(), Box<dyn std::error::Error>> {
         .stdout(predicate::str::is_empty())
         .stderr(predicate::str::is_empty());
 
-    // TODO(lb): Test!
-    // let mut cmd = Command::cargo_bin("treeedb-rust")?;
-    // cmd.arg("tests/TODO");
-    // cmd.assert()
-    //     .success()
-    //     .stdout(predicate::str::is_empty())
-    //     .stderr(predicate::str::is_empty());
+    let mut cmd = Command::cargo_bin("treeedb-rust")?;
+    cmd.arg("tests/rs/hello-world.rs");
+    cmd.assert()
+        .success()
+        .stdout(predicate::str::is_empty())
+        .stderr(predicate::str::is_empty());
 
-    // TODO(lb): Install Soufflé in CI
-    // let mut souffle = Command::new("souffle");
-    // souffle.arg(tmp.path());
-    // souffle
-    //     .assert()
-    //     .success()
-    //     .stdout(predicate::str::contains("rust_node\tTODO"))
-    //     .stderr(predicate::str::is_empty());
+    let mut souffle = Command::new("souffle");
+    souffle.arg(tmp.path());
+    souffle
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("rust_node\t10"))
+        .stderr(predicate::str::is_empty());
     Ok(())
 }
