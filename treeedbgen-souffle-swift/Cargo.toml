@@ -6,7 +6,7 @@ description = "Generate Soufflé types and relations from the Swift tree-sitter 
 keywords = ["datalog", "swift", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
-readme = "README.md"
+readme = "../README.md"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 

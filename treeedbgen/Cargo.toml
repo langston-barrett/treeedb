@@ -6,7 +6,7 @@ description = "Parse node-types.json from a tree-sitter grammar"
 keywords = ["parsing", "tree-sitter"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
-readme = "README.md"
+readme = "../README.md"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 
