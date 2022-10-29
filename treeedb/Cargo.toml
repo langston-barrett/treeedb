@@ -6,7 +6,7 @@ description = "Generate Datalog facts from tree-sitter parse trees"
 keywords = ["datalog", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
-readme = "README.md"
+readme = "../README.md"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 

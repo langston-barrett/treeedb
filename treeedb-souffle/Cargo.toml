@@ -6,7 +6,7 @@ description = "Generate Datalog facts from Soufflé source code"
 keywords = ["datalog", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
-readme = "README.md"
+readme = "../README.md"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 
