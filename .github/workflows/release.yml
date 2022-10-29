@@ -43,21 +43,7 @@ jobs:
     - uses: ncipollo/release-action@v1
       if: ${{ startsWith(github.ref, 'refs/tags/v') }}
       with:
-        artifacts: >
-          exe/treeedb-c,
-          exe/treeedb-csharp,
-          exe/treeedb-java,
-          exe/treeedb-javascript,
-          exe/treeedb-rust,
-          exe/treeedb-souffle,
-          exe/treeedb-swift,
-          treeedb-c.dl,
-          treeedb-csharp.dl,
-          treeedb-java.dl,
-          treeedb-javascript.dl,
-          treeedb-rust.dl,
-          treeedb-souffle.dl,
-          treeedb-swift.dl,
+        artifacts: "exe/treeedb-c,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-rust,exe/treeedb-souffle,exe/treeedb-swift,treeedb-c.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-rust.dl,treeedb-souffle.dl,treeedb-swift.dl"
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}

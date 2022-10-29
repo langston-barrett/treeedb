@@ -1,6 +1,6 @@
 [package]
 name = "treeedb-swift"
-version = "0.1.0-rc.2"
+version = "0.1.0-rc.3"
 edition = "2021"
 description = "Generate Datalog facts from Swift source code"
 keywords = ["datalog", "swift", "parsing", "souffle"]
@@ -12,5 +12,5 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1.0"
-treeedb = { version = "0.1.0-rc.2", path = "../treeedb", features = ["cli"] }
+treeedb = { version = "0.1.0-rc.3", path = "../treeedb", features = ["cli"] }
 tree-sitter-swift = { version = "0.3.4" }
