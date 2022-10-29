@@ -1,6 +1,6 @@
 [package]
 name = "treeedb-csharp"
-version = "0.1.0-rc.4"
+version = "0.1.0-rc.5"
 edition = "2021"
 description = "Generate Datalog facts from C# source code"
 keywords = ["datalog", "csharp", "parsing", "souffle"]
@@ -12,5 +12,5 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1.0"
-treeedb = { version = "0.1.0-rc.4", path = "../treeedb", features = ["cli"] }
+treeedb = { version = "0.1.0-rc.5", path = "../treeedb", features = ["cli"] }
 tree-sitter-c-sharp = { version = "0.20", git = "https://github.com/tree-sitter/tree-sitter-c-sharp" }
