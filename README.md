@@ -43,6 +43,19 @@ download the artifacts related to the language you want to analyze. The
 pre-built executables are statically linked, but are [currently][#3] only
 available for Linux.
 
+### Build From crates.io
+
+You can build a released version from [crates.io][crates-io]. You'll need the
+Rust compiler and the [Cargo][cargo] build tool. [rustup][rustup] makes it very
+easy to obtain these. Then, to install the tools for the language `<LANG>`, run:
+
+```
+cargo install treeedb-<LANG> treeedbgen-souffle-<LANG>
+```
+
+This will install binaries to `~/.cargo/bin`. To generate the Datalog file, run
+the `treeedbgen-souffle-<LANG>` binary.
+
 ### Build From Source
 
 To build from source, you'll need the Rust compiler and the [Cargo][cargo] build
@@ -213,6 +226,7 @@ bash scripts/add-language.sh python Python
 [#3]: https://github.com/langston-barrett/treeedb/issues/3
 [#9]: https://github.com/langston-barrett/treeedb/pull/9
 [cargo]: https://doc.rust-lang.org/cargo/
+[crates-io]: https://crates.io/
 [cclyzerpp-fact-generator]: https://galoisinc.github.io/cclyzerpp/architecture.html#the-fact-generator
 [cclyzerpp-schema]: https://github.com/GaloisInc/cclyzerpp/tree/746e30ac4579da68e06d49faac27f1f88d8edc72/datalog/schema
 [cclyzerpp]: https://galoisinc.github.io/cclyzerpp/index.html
