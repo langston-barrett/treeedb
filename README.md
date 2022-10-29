@@ -66,7 +66,7 @@ class Main {
 ```
 
 (The files shown in this section are also available in
-[`examples/java/`](./examples/java/))
+[`examples/java/`](./examples/java/).)
 
 Create a Datalog file named `const-binop.dl` that includes `treeedb-java.dl` and
 has a rule to find constant-valued binary expressions:
@@ -93,7 +93,7 @@ show_const_binop(text) :-
 .output show_const_binop(IO=stdout)
 ```
 
-Generate the input files:
+Generate the input files (`node.csv` and `field.csv`):
 
 ```bash
 treeedb-java Main.java
@@ -134,11 +134,11 @@ represent the program as relations, and (2) how to ingest programs into that
 representation. State-of-the-art Datalog projects do all this "by hand":
 
 - [cclyzer++][cclyzerpp] has a ["schema" directory][cclyzerpp-schema] (1) and
-  the [FactGenerator][cclyzerpp-fact-generator] (2)
+  the [FactGenerator][cclyzerpp-fact-generator] (2).
 - [Doop][doop] has a big [imports.dl][doop-imports] file (1) and [a variety
   of generators][doop-gen] (2).
 - [ddisasm][ddisasm] has the [gtirb-decoder][ddisasm-gtirb-decoder] (2).
-- [securify2][securify2] has [`analysis-input.dl`][securify-input] (1).
+- [securify][securify] has [`analysis-input.dl`][securify-input] (1).
 
 Writing these representations and ingestion tools takes up valuable time and
 distracts from the work of writing analyses. `treeedb` aims to automate it,
@@ -172,7 +172,7 @@ being analyzed and emit facts (e.g., `treeedb-c`).
 
 To add a new language:
 
-- Create new directories `treeedb-<LANG>` and `treeedbge-souffle-<LANG>`
+- Create new directories `treeedb-<LANG>` and `treeedbgen-souffle-<LANG>`
   with the same structure as an existing one (it might be easiest to just
   recursively copy existing ones).
 - Add the new directories to the top-level [`Cargo.toml`](Cargo.toml).
@@ -184,6 +184,7 @@ To add a new language:
 [cclyzerpp-fact-generator]: https://galoisinc.github.io/cclyzerpp/architecture.html#the-fact-generator
 [cclyzerpp-schema]: https://github.com/GaloisInc/cclyzerpp/tree/746e30ac4579da68e06d49faac27f1f88d8edc72/datalog/schema
 [cclyzerpp]: https://galoisinc.github.io/cclyzerpp/index.html
+[ddisasm]: https://github.com/GrammaTech/ddisasm
 [ddisasm-gtirb-decoder]: https://github.com/GrammaTech/ddisasm/tree/c56be069dc9565e4267f3cbb6ca02fb6b97bca2e/src/gtirb-decoder
 [doop-gen]: https://bitbucket.org/yanniss/doop/src/master/generators/
 [doop-imports]: https://bitbucket.org/yanniss/doop/src/55d39516653efb634f833fccb5b3d30ae472badb/souffle-logic/facts/imports.dl?at=master
