@@ -1,6 +1,6 @@
 [package]
 name = "treeedbgen"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 edition = "2021"
 description = "Parse node-types.json from a tree-sitter grammar"
 keywords = ["parsing", "tree-sitter"]
