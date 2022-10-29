@@ -1,0 +1,16 @@
+[package]
+name = "treeedb-c_sharp"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Datalog facts from C# source code"
+keywords = ["datalog", "c_sharp", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1.0"
+treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
+tree-sitter-c-sharp = { version = "0.20", git = "https://github.com/tree-sitter/tree-sitter-c-sharp" }
