@@ -1,9 +1,9 @@
 [package]
-name = "treeedbgen-souffle-c_sharp"
+name = "treeedbgen-souffle-csharp"
 version = "0.1.0"
 edition = "2021"
 description = "Generate Soufflé types and relations from the C# tree-sitter grammar"
-keywords = ["datalog", "c_sharp", "parsing", "souffle"]
+keywords = ["datalog", "csharp", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
 readme = "README.md"

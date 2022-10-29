@@ -1,9 +1,9 @@
 [package]
-name = "treeedb-c_sharp"
+name = "treeedb-csharp"
 version = "0.1.0"
 edition = "2021"
 description = "Generate Datalog facts from C# source code"
-keywords = ["datalog", "c_sharp", "parsing", "souffle"]
+keywords = ["datalog", "csharp", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
