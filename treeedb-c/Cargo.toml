@@ -1,6 +1,6 @@
 [package]
 name = "treeedb-c"
-version = "0.1.0-rc.1"
+version = "0.1.0-rc.2"
 edition = "2021"
 description = "Generate Datalog facts from C source code"
 keywords = ["datalog", "c", "parsing", "souffle"]
@@ -12,5 +12,5 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1.0"
-treeedb = { version = "0.1.0-rc.1", path = "../treeedb", features = ["cli"] }
+treeedb = { version = "0.1.0-rc.2", path = "../treeedb", features = ["cli"] }
 tree-sitter-c = { version = "0.20" }
