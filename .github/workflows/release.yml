@@ -17,6 +17,7 @@ jobs:
       run: |
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
         cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl --prefix java
+        cargo run --bin treeedbgen-souffle-javascript -- --output treeedb-javascript.dl --prefix js
         cargo run --bin treeedbgen-rust-rust -- --output treeedb-rust.dl --prefix dl
         cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl --prefix dl
 
@@ -31,6 +32,7 @@ jobs:
         mkdir exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-c exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-java exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-javascript exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-rust exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-souffle exe/
 
@@ -40,10 +42,12 @@ jobs:
         artifacts: >
           exe/treeedb-c,
           exe/treeedb-java,
+          exe/treeedb-javascript,
           exe/treeedb-rust,
           exe/treeedb-souffle,
           treeedb-c.dl,
           treeedb-java.dl,
+          treeedb-javascript.dl,
           treeedb-rust.dl,
           treeedb-souffle.dl,
         artifactErrorsFailBuild: true
