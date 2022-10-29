@@ -179,7 +179,18 @@ To add a new language:
 - Add the language to `.github/workflows/release.yml` by copying and modifying
   existing lines for other languages.
 
+See [PR #9][#9] for a complete example.
+
+The script [`./scripts/add-language.sh`](`./scripts/add-language.sh`) automates
+a few of these steps - but it is not necessarily a turn-key solution. Usage
+example:
+
+```bash
+bash scripts/add-language.sh python Python
+```
+
 [#3]: https://github.com/langston-barrett/treeedb/issues/3
+[#9]: https://github.com/langston-barrett/treeedb/pull/9
 [cargo]: https://doc.rust-lang.org/cargo/
 [cclyzerpp-fact-generator]: https://galoisinc.github.io/cclyzerpp/architecture.html#the-fact-generator
 [cclyzerpp-schema]: https://github.com/GaloisInc/cclyzerpp/tree/746e30ac4579da68e06d49faac27f1f88d8edc72/datalog/schema
