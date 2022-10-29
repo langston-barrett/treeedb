@@ -8,6 +8,7 @@ members = [
     "treeedb-rust",
     "treeedb-souffle",
     "treeedb-rust",
+    "treeedb-swift",
     "treeedbgen",
     "treeedbgen-souffle",
     "treeedbgen-souffle-c",
@@ -15,6 +16,7 @@ members = [
     "treeedbgen-souffle-javascript",
     "treeedbgen-souffle-rust",
     "treeedbgen-souffle-souffle",
+    "treeedbgen-souffle-swift",
 ]
 
 [profile.release]
