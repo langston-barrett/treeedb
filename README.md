@@ -46,7 +46,16 @@ available for Linux.
 ### Build From Source
 
 To build from source, you'll need the Rust compiler and the [Cargo][cargo] build
-tool. [rustup][rustup] makes it very easy to obtain these. Then, run:
+tool. [rustup][rustup] makes it very easy to obtain these.
+
+Then, get the source:
+
+```bash
+git clone https://github.com/langston-barrett/treeedb
+cd treeedb
+```
+
+Finally, build everything:
 
 ```bash
 cargo build --release
