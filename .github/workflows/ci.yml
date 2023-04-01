@@ -21,6 +21,7 @@ jobs:
       run: |
         rustup update
         rustup component add clippy
+    - uses: Swatinem/rust-cache@6fd3edff6979b79f87531400ad694fb7f2c84b1f
     - name: Lint
       run: make lint
 
@@ -32,6 +33,7 @@ jobs:
       run: |
         sudo apt-get install -y musl-tools
         rustup target add x86_64-unknown-linux-musl
+    - uses: Swatinem/rust-cache@6fd3edff6979b79f87531400ad694fb7f2c84b1f
     - run: make static
 
   test:
@@ -45,4 +47,5 @@ jobs:
         echo "deb [signed-by=/usr/share/keyrings/souffle-archive-keyring.gpg] https://souffle-lang.github.io/ppa/ubuntu/ stable main" | sudo tee /etc/apt/sources.list.d/souffle.list
         sudo apt update
         sudo apt install souffle
+    - uses: Swatinem/rust-cache@6fd3edff6979b79f87531400ad694fb7f2c84b1f
     - run: make test
