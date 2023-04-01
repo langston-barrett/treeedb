@@ -8,11 +8,11 @@ TOML = $(shell ls ./**/*.toml)
 
 .PHONY: build
 build:
-	$(CARGO) $(CARGO_FLAGS) build
+	$(CARGO) $(CARGO_FLAGS) --locked build
 
 .PHONY: check
 check:
-	$(CARGO) check $(CARGO_FLAGS)
+	$(CARGO) check --locked $(CARGO_FLAGS)
 
 .PHONY: entr
 entr:
@@ -35,12 +35,13 @@ lint:
 static:
 	$(CARGO) build $(CARGO_FLAGS) \
 	  --bins \
+	  --locked \
 	  --release \
 	  --target=x86_64-unknown-linux-musl
 
 .PHONY: test
 test:
-	$(CARGO) test $(CARGO_FLAGS)
+	$(CARGO) test --locked $(CARGO_FLAGS)
 
 .PHONY: all
 all: build check fmt lint test
