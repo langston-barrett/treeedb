@@ -38,7 +38,7 @@ impl FactConsumer for NarrowCsvConsumer {
     fn node(&mut self, node: &Node, _source: &[u8]) -> Result<(), Self::Err> {
         let id = node.id();
         self.node_id
-            .write_record(&[&id.to_string(), &id.to_string()])?;
+            .write_record([&id.to_string(), &id.to_string()])?;
         Ok(())
     }
 }
