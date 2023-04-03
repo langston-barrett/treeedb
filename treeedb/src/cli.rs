@@ -7,9 +7,10 @@ use anyhow::{Context, Result};
 use clap::Parser;
 use tree_sitter::Tree;
 
-#[derive(clap::ValueEnum, Debug, Clone, PartialEq, Eq)]
+#[derive(clap::ValueEnum, Debug, Default, Clone, PartialEq, Eq)]
 pub enum OnParseError {
     Ignore,
+    #[default]
     Warn,
     Error,
 }
@@ -21,12 +22,6 @@ impl std::fmt::Display for OnParseError {
             OnParseError::Warn => write!(f, "warn"),
             OnParseError::Error => write!(f, "error"),
         }
-    }
-}
-
-impl Default for OnParseError {
-    fn default() -> Self {
-        OnParseError::Warn
     }
 }
 

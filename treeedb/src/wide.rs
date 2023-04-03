@@ -26,14 +26,14 @@ impl FactConsumer for WideCsvConsumer {
 
     fn field(&mut self, parent: &Node, name: &'static str, child: &Node) -> Result<(), Self::Err> {
         self.field
-            .write_record(&[&parent.id().to_string(), name, &child.id().to_string()])?;
+            .write_record([&parent.id().to_string(), name, &child.id().to_string()])?;
         Ok(())
     }
 
     fn node(&mut self, node: &Node, source: &[u8]) -> Result<(), Self::Err> {
         let start = node.start_position();
         let end = node.end_position();
-        self.node.write_record(&[
+        self.node.write_record([
             &node.id().to_string(),
             node.kind(),
             &node.is_named().to_string(),

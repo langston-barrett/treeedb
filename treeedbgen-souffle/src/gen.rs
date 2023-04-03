@@ -171,7 +171,7 @@ impl PrivGenConfig {
             type_prefix: config
                 .prefix
                 .clone()
-                .unwrap_or_else(|| "".to_string())
+                .unwrap_or_default()
                 .to_upper_camel_case(),
         }
     }
