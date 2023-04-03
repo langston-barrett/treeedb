@@ -16,7 +16,7 @@ pub enum OnParseError {
 }
 
 impl std::fmt::Display for OnParseError {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             OnParseError::Ignore => write!(f, "ignore"),
             OnParseError::Warn => write!(f, "warn"),
@@ -61,7 +61,7 @@ fn read_file(file: &str) -> Result<String> {
     fs::read_to_string(file).with_context(|| format!("Failed to read file {}", file))
 }
 
-fn parse(language: tree_sitter::Language, code: &str) -> Result<tree_sitter::Tree> {
+fn parse(language: tree_sitter::Language, code: &str) -> Result<Tree> {
     let mut parser = tree_sitter::Parser::new();
     parser
         .set_language(language)
