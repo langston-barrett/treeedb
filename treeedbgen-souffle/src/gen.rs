@@ -148,15 +148,16 @@ pub enum GenError {
     Json(#[from] serde_json::Error),
 }
 
+#[derive(Debug)]
 pub struct GenConfig {
     pub printsize: bool,
     pub prefix: Option<String>,
 }
 
 struct PrivGenConfig {
-    pub printsize: bool,
-    pub relation_prefix: String,
-    pub type_prefix: String,
+    printsize: bool,
+    relation_prefix: String,
+    type_prefix: String,
 }
 
 impl PrivGenConfig {

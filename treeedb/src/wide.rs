@@ -2,11 +2,11 @@ use std::fs::File;
 use std::io;
 use std::path::PathBuf;
 
-use csv::Writer;
 use tree_sitter::Node;
 
 use super::consumer::FactConsumer;
 
+#[derive(Debug)]
 pub struct WideCsvConsumer {
     node: csv::Writer<File>,
     field: csv::Writer<File>,
@@ -15,8 +15,8 @@ pub struct WideCsvConsumer {
 impl WideCsvConsumer {
     pub fn new(node_file_path: PathBuf, field_file_path: PathBuf) -> Result<Self, io::Error> {
         Ok(WideCsvConsumer {
-            node: Writer::from_writer(File::create(node_file_path)?),
-            field: Writer::from_writer(File::create(field_file_path)?),
+            node: csv::Writer::from_writer(File::create(node_file_path)?),
+            field: csv::Writer::from_writer(File::create(field_file_path)?),
         })
     }
 }
@@ -24,13 +24,18 @@ impl WideCsvConsumer {
 impl FactConsumer for WideCsvConsumer {
     type Err = csv::Error;
 
-    fn field(&mut self, parent: &Node, name: &'static str, child: &Node) -> Result<(), Self::Err> {
+    fn field(
+        &mut self,
+        parent: &Node<'_>,
+        name: &'static str,
+        child: &Node<'_>,
+    ) -> Result<(), Self::Err> {
         self.field
             .write_record([&parent.id().to_string(), name, &child.id().to_string()])?;
         Ok(())
     }
 
-    fn node(&mut self, node: &Node, source: &[u8]) -> Result<(), Self::Err> {
+    fn node(&mut self, node: &Node<'_>, source: &[u8]) -> Result<(), Self::Err> {
         let start = node.start_position();
         let end = node.end_position();
         self.node.write_record([
