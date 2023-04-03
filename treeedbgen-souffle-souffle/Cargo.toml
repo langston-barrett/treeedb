@@ -17,5 +17,5 @@ tree-sitter-souffle = { version = "0.4.0" }
 
 [dev-dependencies]
 assert_cmd = "2.0"
-predicates = "2.1"
+predicates = "3.0"
 tempfile = "3"

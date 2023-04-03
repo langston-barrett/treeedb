@@ -66,7 +66,7 @@ dependencies = [
  "anstyle",
  "bstr",
  "doc-comment",
- "predicates 3.0.2",
+ "predicates",
  "predicates-core",
  "predicates-tree",
  "wait-timeout",
@@ -343,28 +343,17 @@ checksum = "b7e5500299e16ebb147ae15a00a942af264cf3688f47923b8fc2cd5858f23ad3"
 
 [[package]]
 name = "predicates"
-version = "2.1.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59230a63c37f3e18569bdb90e4a89cbf5bf8b06fea0b84e65ea10cc4df47addd"
-dependencies = [
- "difflib",
- "float-cmp",
- "itertools",
- "normalize-line-endings",
- "predicates-core",
- "regex",
-]
-
-[[package]]
-name = "predicates"
 version = "3.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c575290b64d24745b6c57a12a31465f0a66f3a4799686a6921526a33b0797965"
 dependencies = [
  "anstyle",
  "difflib",
+ "float-cmp",
  "itertools",
+ "normalize-line-endings",
  "predicates-core",
+ "regex",
 ]
 
 [[package]]
@@ -718,7 +707,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-c",
  "treeedbgen-souffle",
@@ -730,7 +719,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-c-sharp",
  "treeedbgen-souffle",
@@ -742,7 +731,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-java",
  "treeedbgen-souffle",
@@ -754,7 +743,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-javascript",
  "treeedbgen-souffle",
@@ -766,7 +755,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-rust",
  "treeedbgen-souffle",
@@ -778,7 +767,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-souffle",
  "treeedbgen-souffle",
@@ -790,7 +779,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
- "predicates 2.1.5",
+ "predicates",
  "tempfile",
  "tree-sitter-swift",
  "treeedbgen-souffle",
