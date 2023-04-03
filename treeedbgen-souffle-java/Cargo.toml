@@ -17,5 +17,5 @@ tree-sitter-java = { version = "0.20", git = 'https://github.com/tree-sitter/tre
 
 [dev-dependencies]
 assert_cmd = "2.0"
-predicates = "2.1"
+predicates = "3.0"
 tempfile = "3"
