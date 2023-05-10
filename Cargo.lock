@@ -552,7 +552,8 @@ dependencies = [
 [[package]]
 name = "tree-sitter-c-sharp"
 version = "0.20.0"
-source = "git+https://github.com/tree-sitter/tree-sitter-c-sharp#2340fd6b57b06ccbf24c2c6dafb15905fdccfb1f"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9ab3dc608f34924fa9e10533a95f62dbc14b6de0ddd7107722eba66fe19ae31"
 dependencies = [
  "cc",
  "tree-sitter",
@@ -561,7 +562,8 @@ dependencies = [
 [[package]]
 name = "tree-sitter-java"
 version = "0.20.0"
-source = "git+https://github.com/tree-sitter/tree-sitter-java#c194ee5e6ede5f26cf4799feead4a8f165dcf14d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0bf5d3f508cbffcbfe1805834101c0d24297a8b6c2184ad9c595556c46d2420"
 dependencies = [
  "cc",
  "tree-sitter",
@@ -609,7 +611,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "clap",
@@ -619,7 +621,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-c"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-c",
@@ -628,7 +630,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-csharp"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-c-sharp",
@@ -637,7 +639,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-java"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-java",
@@ -646,7 +648,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-javascript"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-javascript",
@@ -655,7 +657,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-rust"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-rust",
@@ -664,7 +666,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-souffle"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-souffle",
@@ -673,7 +675,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-swift"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "tree-sitter-swift",
@@ -682,7 +684,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "clap",
  "serde",
@@ -691,7 +693,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "clap",
@@ -703,7 +705,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-c"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -715,7 +717,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-csharp"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -727,7 +729,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-java"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -739,7 +741,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-javascript"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -751,7 +753,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-rust"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -763,7 +765,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-souffle"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -775,7 +777,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-swift"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
