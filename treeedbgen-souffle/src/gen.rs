@@ -89,6 +89,30 @@ fn node_with_fields(
             field_name,
         )?;
     }
+
+    if let Some(children) = &node.children {
+        for child in &children.types {
+            let child_type_name =
+                format!("{}{}", config.type_prefix, child.ty.to_upper_camel_case());
+            let child_relation_name =
+                format!("{}{}_{}_c", config.relation_prefix, &node.ty, child.ty);
+            writeln!(
+                w,
+                ".decl {}(x: {}{}, y: {})",
+                child_relation_name, config.type_prefix, type_name, child_type_name
+            )?;
+            writeln!(
+                w,
+                "{}(x, as(y, {})) :- {}{}(x), {}child(x, y).",
+                child_relation_name,
+                child_type_name,
+                config.relation_prefix,
+                rel_name,
+                config.relation_prefix,
+            )?;
+        }
+    }
+
     Ok(format!("{}{}", config.type_prefix, type_name))
 }
 
@@ -259,6 +283,28 @@ fn declare_field(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenEr
     Ok(())
 }
 
+fn declare_child(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenError> {
+    writeln!(
+        w,
+        ".decl {}child({})",
+        config.relation_prefix,
+        vec![
+            format!("parent: {}Node", config.type_prefix),
+            format!("child: {}Node", config.type_prefix),
+        ]
+        .join(", ")
+    )?;
+    writeln!(
+        w,
+        ".input {}child(IO=file, filename=\"child.csv\", rfc4180=true)",
+        config.relation_prefix,
+    )?;
+    if config.printsize {
+        writeln!(w, ".printsize {}child", config.relation_prefix)?;
+    }
+    Ok(())
+}
+
 pub fn gen(
     config: &GenConfig,
     w: &mut impl Write,
@@ -281,6 +327,7 @@ pub fn gen(
 
     declare_node(&config, w)?;
     declare_field(&config, w)?;
+    declare_child(&config, w)?;
 
     Ok(())
 }

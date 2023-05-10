@@ -12,6 +12,8 @@ pub struct Node {
     pub fields: HashMap<String, Field>,
     #[serde(default)] // empty
     pub subtypes: Vec<Subtype>,
+    #[serde(default)] // empty
+    pub children: Option<Field>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]

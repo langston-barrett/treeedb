@@ -77,7 +77,11 @@ fn stdin_string() -> Result<String> {
 
 pub fn main(language: tree_sitter::Language) -> Result<()> {
     let args = Args::parse();
-    let mut fc = super::wide::WideCsvConsumer::new("node.csv".into(), "field.csv".into())?;
+    let mut fc = super::wide::WideCsvConsumer::new(
+        "node.csv".into(),
+        "field.csv".into(),
+        "child.csv".into(),
+    )?;
     if args.source_files.is_empty() {
         let content = stdin_string()?;
         let tree = parse(language, &content)?;
