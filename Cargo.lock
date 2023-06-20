@@ -553,7 +553,7 @@ dependencies = [
 [[package]]
 name = "tree-sitter-c-sharp"
 version = "0.20.0"
-source = "git+https://github.com/tree-sitter/tree-sitter-c-sharp#aaafc3d75f058ca5fe639b7ed5829964a3ca4575"
+source = "git+https://github.com/tree-sitter/tree-sitter-c-sharp#03b9b6272ef3df674f9c54507cc042412f257eed"
 dependencies = [
  "cc",
  "tree-sitter",
