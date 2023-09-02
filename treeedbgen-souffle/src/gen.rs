@@ -264,7 +264,7 @@ fn declare_field(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenEr
         w,
         ".decl {}field({})",
         config.relation_prefix,
-        vec![
+        [
             format!("parent: {}Node", config.type_prefix),
             format!("name: {}GrammarFieldName", config.type_prefix),
             format!("child: {}Node", config.type_prefix),
@@ -288,7 +288,7 @@ fn declare_child(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenEr
         w,
         ".decl {}child({})",
         config.relation_prefix,
-        vec![
+        [
             format!("parent: {}Node", config.type_prefix),
             format!("child: {}Node", config.type_prefix),
         ]
