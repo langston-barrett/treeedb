@@ -13,7 +13,7 @@ repository = "https://github.com/langston-barrett/treeedb"
 [dependencies]
 anyhow = "1"
 treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
-tree-sitter-swift = { version = "0.3.4" }
+tree-sitter-swift = { version = "0.4.0" }
 
 [dev-dependencies]
 assert_cmd = "2.0"
