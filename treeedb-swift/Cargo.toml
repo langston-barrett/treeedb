@@ -13,4 +13,4 @@ repository = "https://github.com/langston-barrett/treeedb"
 [dependencies]
 anyhow = "1.0"
 treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
-tree-sitter-swift = { version = "0.4.1" }
+tree-sitter-swift = { version = "0.4.3" }
