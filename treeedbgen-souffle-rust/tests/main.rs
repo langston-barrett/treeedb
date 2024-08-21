@@ -5,7 +5,7 @@ use predicates::prelude::*;
 use tempfile::NamedTempFile;
 
 #[test]
-fn gen() -> Result<(), Box<dyn std::error::Error>> {
+fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     let mut cmd = Command::cargo_bin("treeedbgen-souffle-rust")?;
     let tmp = NamedTempFile::new()?;
     cmd.arg("-o").arg(tmp.path());
