@@ -305,7 +305,7 @@ fn declare_child(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenEr
     Ok(())
 }
 
-pub fn gen(
+pub fn r#gen(
     config: &GenConfig,
     w: &mut impl Write,
     node_types_json_str: &str,

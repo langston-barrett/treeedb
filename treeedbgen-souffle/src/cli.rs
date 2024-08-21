@@ -27,12 +27,12 @@ pub fn main(node_types: &str) -> Result<()> {
     if let Some(path) = args.output {
         let mut file = std::fs::File::create(&path)
             .with_context(|| format!("Failed to write to file {}", path))?;
-        super::gen(&config, &mut file, node_types)?;
+        super::r#gen(&config, &mut file, node_types)?;
     } else {
         // https://nnethercote.github.io/perf-book/io.html#locking
         let stdout = std::io::stdout();
         let mut lock = stdout.lock();
-        super::gen(&config, &mut lock, node_types)?;
+        super::r#gen(&config, &mut lock, node_types)?;
     }
     Ok(())
 }
