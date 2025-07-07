@@ -17,8 +17,9 @@ fn node_with_fields(
     node: &Node,
 ) -> Result<String, io::Error> {
     let rel_name = match node.ty.as_str() {
-    "true" | "false" => format!("{}_literal", node.ty),
-    _ => node.ty.clone(),
+        "true" => "true_literal",
+        "false" => "false_literal",
+        _ => &node.ty,
     };
     let type_name = node.ty.to_upper_camel_case();
     writeln!(w, ".type {}{} <: symbol", config.type_prefix, type_name)?;
