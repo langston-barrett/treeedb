@@ -16,7 +16,10 @@ fn node_with_fields(
     w: &mut impl Write,
     node: &Node,
 ) -> Result<String, io::Error> {
-    let rel_name = &node.ty;
+    let rel_name = match node.ty.as_str() {
+    "true" | "false" => format!("{}_literal", node.ty),
+    _ => node.ty.clone(),
+    };
     let type_name = node.ty.to_upper_camel_case();
     writeln!(w, ".type {}{} <: symbol", config.type_prefix, type_name)?;
     writeln!(
