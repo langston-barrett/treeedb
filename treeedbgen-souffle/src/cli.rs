@@ -26,7 +26,7 @@ pub fn main(node_types: &str) -> Result<()> {
     };
     if let Some(path) = args.output {
         let mut file = std::fs::File::create(&path)
-            .with_context(|| format!("Failed to write to file {}", path))?;
+            .with_context(|| format!("Failed to write to file {path}"))?;
         super::r#gen(&config, &mut file, node_types)?;
     } else {
         // https://nnethercote.github.io/perf-book/io.html#locking

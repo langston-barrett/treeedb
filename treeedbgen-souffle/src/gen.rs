@@ -59,7 +59,7 @@ fn node_with_fields(
                 node.ty.to_upper_camel_case(),
                 field_name.to_upper_camel_case(),
             );
-            write!(w, ".type {} = ", field_type_name)?;
+            write!(w, ".type {field_type_name} = ")?;
             let mut types = Vec::new();
             for t in &field.types {
                 if t.named {
@@ -193,7 +193,7 @@ impl PrivGenConfig {
         PrivGenConfig {
             printsize: config.printsize,
             relation_prefix: if let Some(pfx) = &config.prefix {
-                format!("{}_", pfx)
+                format!("{pfx}_")
             } else {
                 "".to_owned()
             },
