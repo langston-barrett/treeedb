@@ -32,10 +32,10 @@ fn handle_parse_errors(path: &str, tree: &Tree, on_parse_error: &OnParseError) {
         OnParseError::Warn if !node.has_error() => (),
         OnParseError::Error if !node.has_error() => (),
         OnParseError::Warn => {
-            eprintln!("[warn] Parse error in {}", path);
+            eprintln!("[warn] Parse error in {path}");
         }
         OnParseError::Error => {
-            eprintln!("[error] Parse error in {}", path);
+            eprintln!("[error] Parse error in {path}");
             process::exit(1);
         }
     }
@@ -58,7 +58,7 @@ pub struct Args {
 }
 
 fn read_file(file: &str) -> Result<String> {
-    fs::read_to_string(file).with_context(|| format!("Failed to read file {}", file))
+    fs::read_to_string(file).with_context(|| format!("Failed to read file {file}"))
 }
 
 fn parse(language: tree_sitter::Language, code: &str) -> Result<Tree> {
