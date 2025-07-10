@@ -21,8 +21,8 @@ pub fn facts<E>(
                 fc.field(&node, name, &child)?;
             }
         }
-        for child in node.named_children(&mut cursor) {
-            fc.child(&node, &child)?;
+        for (i, child) in node.named_children(&mut cursor).enumerate() {
+            fc.child(&node, i as u32, &child)?;
             nodes.push(child);
         }
     }

@@ -22,7 +22,7 @@ pub trait FactConsumer {
         child: &Node<'_>,
     ) -> Result<(), Self::Err>;
 
-    fn child(&mut self, parent: &Node<'_>, child: &Node<'_>) -> Result<(), Self::Err>;
+    fn child(&mut self, parent: &Node<'_>, index: u32, child: &Node<'_>) -> Result<(), Self::Err>;
 
     fn node(&mut self, node: &Node<'_>, source: &[u8]) -> Result<(), Self::Err>;
 }

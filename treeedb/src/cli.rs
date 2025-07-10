@@ -1,6 +1,7 @@
 use std::fs;
 use std::io;
 use std::io::Read;
+use std::path::{Path, PathBuf};
 use std::process;
 
 use anyhow::{Context, Result};
@@ -44,13 +45,14 @@ fn handle_parse_errors(path: &str, tree: &Tree, on_parse_error: &OnParseError) {
 /// Generate Datalog facts from source code
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
-// TODO(lb): Output directory, default is current directory
-// #[arg(short, long, default_value = None)]
-// pub output: Option<String>,
 pub struct Args {
     /// Behavior on parse errors
     #[arg(long, default_value_t = OnParseError::Warn, value_name = "CHOICE")]
     on_parse_error: OnParseError,
+
+    /// Output directory
+    #[arg(short, long, default_value = ".", value_name = "OUT_DIR")]
+    pub output_directory: PathBuf,
 
     /// Source code to consume; if empty, parse from stdin
     #[arg(value_name = "SRC_FILE")]
@@ -75,13 +77,19 @@ fn stdin_string() -> Result<String> {
     Ok(stdin_str)
 }
 
+fn create_consumer(output_directory: &Path) -> Result<super::wide::WideCsvConsumer> {
+    // TODO(lb): Create consumer based on config
+    // For now, just use the wide CSV consumer as the default
+    Ok(super::wide::WideCsvConsumer::new(
+        output_directory.join("node.csv"),
+        output_directory.join("field.csv"),
+        output_directory.join("child.csv"),
+    )?)
+}
+
 pub fn main(language: tree_sitter::Language) -> Result<()> {
     let args = Args::parse();
-    let mut fc = super::wide::WideCsvConsumer::new(
-        "node.csv".into(),
-        "field.csv".into(),
-        "child.csv".into(),
-    )?;
+    let mut fc = create_consumer(&args.output_directory)?;
     if args.source_files.is_empty() {
         let content = stdin_string()?;
         let tree = parse(language, &content)?;

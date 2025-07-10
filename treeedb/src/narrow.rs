@@ -35,7 +35,12 @@ impl FactConsumer for NarrowCsvConsumer {
         Ok(())
     }
 
-    fn child(&mut self, _parent: &Node<'_>, _child: &Node<'_>) -> Result<(), Self::Err> {
+    fn child(
+        &mut self,
+        _parent: &Node<'_>,
+        _index: u32,
+        _child: &Node<'_>,
+    ) -> Result<(), Self::Err> {
         Ok(())
     }
 
