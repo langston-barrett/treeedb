@@ -1,6 +1,7 @@
 use std::fs;
 use std::io;
 use std::io::Read;
+use std::path::{Path, PathBuf};
 use std::process;
 
 use anyhow::{Context, Result};
@@ -51,7 +52,7 @@ pub struct Args {
 
     /// Output directory
     #[arg(short, long, default_value = ".", value_name = "OUT_DIR")]
-    pub output_directory: String,
+    pub output_directory: PathBuf,
 
     /// Source code to consume; if empty, parse from stdin
     #[arg(value_name = "SRC_FILE")]
@@ -76,13 +77,13 @@ fn stdin_string() -> Result<String> {
     Ok(stdin_str)
 }
 
-fn create_consumer(output_directory: &str) -> Result<super::wide::WideCsvConsumer> {
+fn create_consumer(output_directory: &Path) -> Result<super::wide::WideCsvConsumer> {
     // TODO(lb): Create consumer based on config
     // For now, just use the wide CSV consumer as the default
     Ok(super::wide::WideCsvConsumer::new(
-        format!("{output_directory}/node.csv").into(),
-        format!("{output_directory}/field.csv").into(),
-        format!("{output_directory}/child.csv").into(),
+        output_directory.join("node.csv"),
+        output_directory.join("field.csv"),
+        output_directory.join("child.csv"),
     )?)
 }
 
