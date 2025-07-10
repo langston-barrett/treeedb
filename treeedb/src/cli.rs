@@ -44,13 +44,14 @@ fn handle_parse_errors(path: &str, tree: &Tree, on_parse_error: &OnParseError) {
 /// Generate Datalog facts from source code
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
-// TODO(lb): Output directory, default is current directory
-// #[arg(short, long, default_value = None)]
-// pub output: Option<String>,
 pub struct Args {
     /// Behavior on parse errors
     #[arg(long, default_value_t = OnParseError::Warn, value_name = "CHOICE")]
     on_parse_error: OnParseError,
+
+    /// Output directory
+    #[arg(short, long, default_value = ".", value_name = "OUT_DIR")]
+    pub output_directory: String,
 
     /// Source code to consume; if empty, parse from stdin
     #[arg(value_name = "SRC_FILE")]
@@ -75,13 +76,19 @@ fn stdin_string() -> Result<String> {
     Ok(stdin_str)
 }
 
+fn create_consumer(output_directory: &str) -> Result<super::wide::WideCsvConsumer> {
+    // TODO(lb): Create consumer based on config
+    // For now, just use the wide CSV consumer as the default
+    Ok(super::wide::WideCsvConsumer::new(
+        format!("{}/node.csv", output_directory).into(),
+        format!("{}/field.csv", output_directory).into(),
+        format!("{}/child.csv", output_directory).into(),
+    )?)
+}
+
 pub fn main(language: tree_sitter::Language) -> Result<()> {
     let args = Args::parse();
-    let mut fc = super::wide::WideCsvConsumer::new(
-        "node.csv".into(),
-        "field.csv".into(),
-        "child.csv".into(),
-    )?;
+    let mut fc = create_consumer(&args.output_directory)?;
     if args.source_files.is_empty() {
         let content = stdin_string()?;
         let tree = parse(language, &content)?;
