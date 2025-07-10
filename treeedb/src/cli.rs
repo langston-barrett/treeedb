@@ -80,9 +80,9 @@ fn create_consumer(output_directory: &str) -> Result<super::wide::WideCsvConsume
     // TODO(lb): Create consumer based on config
     // For now, just use the wide CSV consumer as the default
     Ok(super::wide::WideCsvConsumer::new(
-        format!("{}/node.csv", output_directory).into(),
-        format!("{}/field.csv", output_directory).into(),
-        format!("{}/child.csv", output_directory).into(),
+        format!("{output_directory}/node.csv").into(),
+        format!("{output_directory}/field.csv").into(),
+        format!("{output_directory}/child.csv").into(),
     )?)
 }
 
