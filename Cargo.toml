@@ -3,6 +3,7 @@
 members = [
     "treeedb",
     "treeedb-c",
+    "treeedb-cpp",
     "treeedb-csharp",
     "treeedb-java",
     "treeedb-javascript",
@@ -13,6 +14,7 @@ members = [
     "treeedbgen",
     "treeedbgen-souffle",
     "treeedbgen-souffle-c",
+    "treeedbgen-souffle-cpp",
     "treeedbgen-souffle-csharp",
     "treeedbgen-souffle-java",
     "treeedbgen-souffle-javascript",
