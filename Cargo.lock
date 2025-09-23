@@ -508,6 +508,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tree-sitter-php"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18b689aaa57bd1f0707e5c0728004e7f737b16768644a7e745d23021330797de"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
 name = "tree-sitter-rust"
 version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -589,6 +599,15 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "tree-sitter-javascript",
+ "treeedb",
+]
+
+[[package]]
+name = "treeedb-php"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "tree-sitter-php",
  "treeedb",
 ]
 
@@ -697,6 +716,18 @@ dependencies = [
  "predicates",
  "tempfile",
  "tree-sitter-javascript",
+ "treeedbgen-souffle",
+]
+
+[[package]]
+name = "treeedbgen-souffle-php"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "assert_cmd",
+ "predicates",
+ "tempfile",
+ "tree-sitter-php",
  "treeedbgen-souffle",
 ]
 
