@@ -2,7 +2,7 @@
 name = "treeedbgen-souffle-go"
 version = "0.1.0"
 edition = "2021"
-description = "Generate Soufflé types and relations from the C tree-sitter grammar"
+description = "Generate Soufflé types and relations from the Go tree-sitter grammar"
 keywords = ["datalog", "go", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
