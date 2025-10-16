@@ -489,6 +489,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tree-sitter-go"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1ad6d11f19441b961af2fda7f12f5d0dac325f6d6de83836a1d3750018cc5114"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
 name = "tree-sitter-java"
 version = "0.20.2"
 source = "git+https://github.com/tree-sitter/tree-sitter-java#2b57cd9541f9fd3a89207d054ce8fbe72657c444"
@@ -581,6 +591,15 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "tree-sitter-c-sharp",
+ "treeedb",
+]
+
+[[package]]
+name = "treeedb-go"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "tree-sitter-go",
  "treeedb",
 ]
 
@@ -692,6 +711,18 @@ dependencies = [
  "predicates",
  "tempfile",
  "tree-sitter-c-sharp",
+ "treeedbgen-souffle",
+]
+
+[[package]]
+name = "treeedbgen-souffle-go"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "assert_cmd",
+ "predicates",
+ "tempfile",
+ "tree-sitter-go",
  "treeedbgen-souffle",
 ]
 
