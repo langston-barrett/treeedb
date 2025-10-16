@@ -1,0 +1,17 @@
+[package]
+name = "treeedb-perl"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Datalog facts from Perl source code"
+keywords = ["datalog", "perl", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "../README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1.0"
+treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
+tree-sitter-perl = { version = "0.13", git = "https://github.com/tree-sitter-perl/tree-sitter-perl" }
+
