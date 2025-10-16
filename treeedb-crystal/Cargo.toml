@@ -1,0 +1,17 @@
+[package]
+name = "treeedb-crystal"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Datalog facts from Crystal source code"
+keywords = ["datalog", "crystal", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "../README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1.0"
+tree-sitter = "0.25"
+treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
+tree-sitter-crystal = { git = "https://github.com/crystal-lang-tools/tree-sitter-crystal" }
