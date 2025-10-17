@@ -1,5 +1,5 @@
 use anyhow::Result;
 
 fn main() -> Result<()> {
-    treeedb::cli::main(tree_sitter_c_sharp::language())
+    treeedb::cli::main(tree_sitter_c_sharp::LANGUAGE)
 }

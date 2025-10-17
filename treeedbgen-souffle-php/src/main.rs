@@ -1,5 +1,5 @@
 use anyhow::Result;
 
 fn main() -> Result<()> {
-    treeedbgen_souffle::cli::main(tree_sitter_php::NODE_TYPES)
+    treeedbgen_souffle::cli::main(tree_sitter_php::PHP_NODE_TYPES)
 }

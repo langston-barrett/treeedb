@@ -12,6 +12,5 @@ repository = "https://github.com/langston-barrett/treeedb"
 
 [dependencies]
 anyhow = "1.0"
-tree-sitter = "0.25"
 treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
 tree-sitter-crystal = { git = "https://github.com/crystal-lang-tools/tree-sitter-crystal" }

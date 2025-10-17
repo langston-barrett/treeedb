@@ -15,8 +15,8 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
         .stdout(predicate::str::is_empty())
         .stderr(predicate::str::is_empty());
 
-    let mut cmd = Command::cargo_bin("treeedb-c")?;
-    cmd.arg("tests/python/hello-world.py");
+    let mut cmd = Command::cargo_bin("treeedb-python")?;
+    cmd.arg("tests/py/hello-world.py");
     cmd.assert()
         .success()
         .stdout(predicate::str::is_empty())

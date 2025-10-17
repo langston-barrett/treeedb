@@ -6,7 +6,8 @@ use std::process;
 
 use anyhow::{Context, Result};
 use clap::Parser;
-use tree_sitter::Tree;
+use tree_sitter::{Tree, Language};
+use tree_sitter_language::LanguageFn;
 
 #[derive(clap::ValueEnum, Debug, Default, Clone, PartialEq, Eq)]
 pub enum OnParseError {
@@ -63,7 +64,7 @@ fn read_file(file: &str) -> Result<String> {
     fs::read_to_string(file).with_context(|| format!("Failed to read file {file}"))
 }
 
-fn parse(language: &tree_sitter::Language, code: &str) -> Result<Tree> {
+fn parse(language: &Language, code: &str) -> Result<Tree> {
     let mut parser = tree_sitter::Parser::new();
     parser
         .set_language(language)
@@ -87,9 +88,11 @@ fn create_consumer(output_directory: &Path) -> Result<super::wide::WideCsvConsum
     )?)
 }
 
-pub fn main(language: tree_sitter::Language) -> Result<()> {
+pub fn main(language_fn: LanguageFn) -> Result<()> {
     let args = Args::parse();
     let mut fc = create_consumer(&args.output_directory)?;
+    let language = Language::new(language_fn);
+
     if args.source_files.is_empty() {
         let content = stdin_string()?;
         let tree = parse(&language, &content)?;
@@ -102,5 +105,7 @@ pub fn main(language: tree_sitter::Language) -> Result<()> {
         handle_parse_errors(&path, &tree, &args.on_parse_error);
         super::facts(&mut fc, content.as_bytes(), tree).unwrap();
     }
+
     Ok(())
 }
+
