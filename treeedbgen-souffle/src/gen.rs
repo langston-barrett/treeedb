@@ -20,6 +20,7 @@ fn node_with_fields(
         "true" => "true_literal",
         "false" => "false_literal",
         "nil" => "nil_literal",
+        "range" => "range_op",
         _ => &node.ty,
     };
     let type_name = node.ty.to_upper_camel_case();
