@@ -14,7 +14,7 @@ repository = "https://github.com/langston-barrett/treeedb"
 anyhow = { version = "1", optional = true }
 clap = { version = "4", features = ["derive"], optional = true }
 csv = "1"
-tree-sitter = "0.20"
+tree-sitter = "0.25"
 
 [features]
 default = []
