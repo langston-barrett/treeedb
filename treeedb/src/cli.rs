@@ -63,7 +63,7 @@ fn read_file(file: &str) -> Result<String> {
     fs::read_to_string(file).with_context(|| format!("Failed to read file {file}"))
 }
 
-fn parse(language: tree_sitter::Language, code: &str) -> Result<Tree> {
+fn parse(language: &tree_sitter::Language, code: &str) -> Result<Tree> {
     let mut parser = tree_sitter::Parser::new();
     parser
         .set_language(language)
@@ -92,13 +92,13 @@ pub fn main(language: tree_sitter::Language) -> Result<()> {
     let mut fc = create_consumer(&args.output_directory)?;
     if args.source_files.is_empty() {
         let content = stdin_string()?;
-        let tree = parse(language, &content)?;
+        let tree = parse(&language, &content)?;
         handle_parse_errors("<stdin>", &tree, &args.on_parse_error);
         super::facts(&mut fc, content.as_bytes(), tree).unwrap();
     }
     for path in args.source_files {
         let content = read_file(&path)?;
-        let tree = parse(language, &content)?;
+        let tree = parse(&language, &content)?;
         handle_parse_errors(&path, &tree, &args.on_parse_error);
         super::facts(&mut fc, content.as_bytes(), tree).unwrap();
     }

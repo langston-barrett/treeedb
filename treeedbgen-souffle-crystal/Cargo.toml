@@ -1,9 +1,9 @@
 [package]
-name = "treeedbgen-souffle-javascript"
+name = "treeedbgen-souffle-crystal"
 version = "0.1.0"
 edition = "2021"
-description = "Generate Soufflé types and relations from the JavaScript tree-sitter grammar"
-keywords = ["datalog", "javascript", "parsing", "souffle"]
+description = "Generate Soufflé types and relations from the Crystal tree-sitter grammar"
+keywords = ["datalog", "crystal", "parsing", "souffle"]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
 readme = "../README.md"
@@ -13,7 +13,7 @@ repository = "https://github.com/langston-barrett/treeedb"
 [dependencies]
 anyhow = "1"
 treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
-tree-sitter-javascript = "0.25"
+tree-sitter-crystal = { git = "https://github.com/crystal-lang-tools/tree-sitter-crystal" }
 
 [dev-dependencies]
 assert_cmd = "2.0"
