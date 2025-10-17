@@ -519,16 +519,6 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter"
-version = "0.20.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e747b1f9b7b931ed39a548c1fae149101497de3c1fc8d9e18c62c1a66c683d3d"
-dependencies = [
- "cc",
- "regex",
-]
-
-[[package]]
-name = "tree-sitter"
 version = "0.25.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "78f873475d258561b06f1c595d93308a7ed124d9977cb26b148c2084a4a3cc87"
@@ -543,12 +533,12 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-c"
-version = "0.20.2"
+version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cca211f4827d4b4dc79f388bf67b6fa3bc8a8cfa642161ef24f99f371ba34c7b"
+checksum = "1a3aad8f0129083a59fe8596157552d2bb7148c492d44c21558d68ca1c722707"
 dependencies = [
  "cc",
- "tree-sitter 0.20.10",
+ "tree-sitter-language",
 ]
 
 [[package]]
@@ -562,12 +552,12 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-cpp"
-version = "0.20.2"
+version = "0.23.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c88fd925d0333e63ac64e521f5bd79c53019e569ffbbccfeef346a326f459e9"
+checksum = "df2196ea9d47b4ab4a31b9297eaa5a5d19a0b121dceb9f118f6790ad0ab94743"
 dependencies = [
  "cc",
- "tree-sitter 0.20.10",
+ "tree-sitter-language",
 ]
 
 [[package]]
@@ -581,21 +571,31 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-go"
-version = "0.20.0"
+version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ad6d11f19441b961af2fda7f12f5d0dac325f6d6de83836a1d3750018cc5114"
+checksum = "c8560a4d2f835cc0d4d2c2e03cbd0dde2f6114b43bc491164238d333e28b16ea"
 dependencies = [
  "cc",
- "tree-sitter",
+ "tree-sitter-language",
 ]
 
 [[package]]
 name = "tree-sitter-java"
-version = "0.20.2"
-source = "git+https://github.com/tree-sitter/tree-sitter-java#2b57cd9541f9fd3a89207d054ce8fbe72657c444"
+version = "0.23.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0aa6cbcdc8c679b214e616fd3300da67da0e492e066df01bcf5a5921a71e90d6"
 dependencies = [
  "cc",
- "tree-sitter 0.20.10",
+ "tree-sitter-language",
+]
+
+[[package]]
+name = "tree-sitter-java"
+version = "0.23.5"
+source = "git+https://github.com/tree-sitter/tree-sitter-java#e10607b45ff745f5f876bfa3e94fbcc6b44bdc11"
+dependencies = [
+ "cc",
+ "tree-sitter-language",
 ]
 
 [[package]]
@@ -615,6 +615,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c4013970217383f67b18aef68f6fb2e8d409bc5755227092d32efb0422ba24b8"
 
 [[package]]
+name = "tree-sitter-perl"
+version = "0.0.1"
+source = "git+https://github.com/tree-sitter-perl/tree-sitter-perl?branch=release#0c24d001dd1921e418fb933d208a7bd7dd3f923a"
+dependencies = [
+ "cc",
+ "tree-sitter-language",
+]
+
+[[package]]
 name = "tree-sitter-php"
 version = "0.24.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -626,52 +635,42 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-python"
-version = "0.20.4"
+version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6c93b1b1fbd0d399db3445f51fd3058e43d0b4dcff62ddbdb46e66550978aa5"
+checksum = "6bf85fd39652e740bf60f46f4cda9492c3a9ad75880575bf14960f775cb74a1c"
 dependencies = [
  "cc",
- "tree-sitter",
+ "tree-sitter-language",
 ]
 
 [[package]]
 name = "tree-sitter-ruby"
-version = "0.20.1"
+version = "0.23.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44d50ef383469df8485f024c5fb01faced8cb90368192a7ba02605b43b2427fe"
+checksum = "be0484ea4ef6bb9c575b4fdabde7e31340a8d2dbc7d52b321ac83da703249f95"
 dependencies = [
  "cc",
- "tree-sitter",
+ "tree-sitter-language",
 ]
 
 [[package]]
 name = "tree-sitter-rust"
-version = "0.20.3"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "797842733e252dc11ae5d403a18060bf337b822fc2ae5ddfaa6ff4d9cc20bda6"
+checksum = "4b9b18034c684a2420722be8b2a91c9c44f2546b631c039edf575ccba8c61be1"
 dependencies = [
  "cc",
- "tree-sitter 0.20.10",
-]
-
-[[package]]
-name = "tree-sitter-souffle"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10f4f25aa2790a524866eac9f872de86b8bbc01412f39402c2cef3b9fe1dff8b"
-dependencies = [
- "cc",
- "tree-sitter 0.20.10",
+ "tree-sitter-language",
 ]
 
 [[package]]
 name = "tree-sitter-swift"
-version = "0.4.3"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e55ecb0372483057cb8f0f80c54d1cf76a3e301281d8db16d6c080e19395360f"
+checksum = "4ef216011c3e3df4fa864736f347cb8d509b1066cf0c8549fb1fd81ac9832e59"
 dependencies = [
  "cc",
- "tree-sitter 0.20.10",
+ "tree-sitter-language",
 ]
 
 [[package]]
@@ -681,7 +680,8 @@ dependencies = [
  "anyhow",
  "clap",
  "csv",
- "tree-sitter 0.25.10",
+ "tree-sitter",
+ "tree-sitter-language",
 ]
 
 [[package]]
@@ -707,7 +707,6 @@ name = "treeedb-crystal"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "tree-sitter 0.25.10",
  "tree-sitter-crystal",
  "treeedb",
 ]
@@ -735,7 +734,7 @@ name = "treeedb-java"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "tree-sitter-java",
+ "tree-sitter-java 0.23.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "treeedb",
 ]
 
@@ -745,6 +744,15 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "tree-sitter-javascript",
+ "treeedb",
+]
+
+[[package]]
+name = "treeedb-perl"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "tree-sitter-perl",
  "treeedb",
 ]
 
@@ -781,15 +789,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "tree-sitter-rust",
- "treeedb",
-]
-
-[[package]]
-name = "treeedb-souffle"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "tree-sitter-souffle",
  "treeedb",
 ]
 
@@ -891,7 +890,7 @@ dependencies = [
  "assert_cmd",
  "predicates",
  "tempfile",
- "tree-sitter-java",
+ "tree-sitter-java 0.23.5 (git+https://github.com/tree-sitter/tree-sitter-java)",
  "treeedbgen-souffle",
 ]
 
@@ -904,6 +903,18 @@ dependencies = [
  "predicates",
  "tempfile",
  "tree-sitter-javascript",
+ "treeedbgen-souffle",
+]
+
+[[package]]
+name = "treeedbgen-souffle-perl"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "assert_cmd",
+ "predicates",
+ "tempfile",
+ "tree-sitter-perl",
  "treeedbgen-souffle",
 ]
 
@@ -952,18 +963,6 @@ dependencies = [
  "predicates",
  "tempfile",
  "tree-sitter-rust",
- "treeedbgen-souffle",
-]
-
-[[package]]
-name = "treeedbgen-souffle-souffle"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "assert_cmd",
- "predicates",
- "tempfile",
- "tree-sitter-souffle",
  "treeedbgen-souffle",
 ]
 
