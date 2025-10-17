@@ -1,0 +1,21 @@
+[package]
+name = "treeedbgen-souffle-go"
+version = "0.1.0"
+edition = "2021"
+description = "Generate Soufflé types and relations from the Go tree-sitter grammar"
+keywords = ["datalog", "go", "parsing", "souffle"]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+readme = "../README.md"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+
+[dependencies]
+anyhow = "1"
+treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+tree-sitter-go = { version = "0.20" }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3"
