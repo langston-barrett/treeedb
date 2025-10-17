@@ -6,7 +6,7 @@ use std::process;
 
 use anyhow::{Context, Result};
 use clap::Parser;
-use tree_sitter::{Tree, Language};
+use tree_sitter::{Language, Tree};
 use tree_sitter_language::LanguageFn;
 
 #[derive(clap::ValueEnum, Debug, Default, Clone, PartialEq, Eq)]
@@ -108,4 +108,3 @@ pub fn main(language_fn: LanguageFn) -> Result<()> {
 
     Ok(())
 }
-

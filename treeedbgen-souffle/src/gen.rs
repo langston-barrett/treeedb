@@ -127,7 +127,6 @@ fn node_with_subtypes(
     w: &mut impl Write,
     node: &Node,
 ) -> Result<(), io::Error> {
-
     let named_subtypes = node.subtypes.iter().filter(|t| t.named).collect::<Vec<_>>();
     if named_subtypes.is_empty() {
         return Ok(());
