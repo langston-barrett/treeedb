@@ -19,6 +19,8 @@ fn node_with_fields(
     let rel_name = match node.ty.as_str() {
         "true" => "true_literal",
         "false" => "false_literal",
+        "nil" => "nil_literal",
+        "range" => "range_op",
         _ => &node.ty,
     };
     let type_name = node.ty.to_upper_camel_case();
@@ -125,24 +127,25 @@ fn node_with_subtypes(
     w: &mut impl Write,
     node: &Node,
 ) -> Result<(), io::Error> {
-    if node.subtypes.is_empty() {
+    let named_subtypes = node.subtypes.iter().filter(|t| t.named).collect::<Vec<_>>();
+    if named_subtypes.is_empty() {
         return Ok(());
     }
+
     write!(
         w,
         ".type {}{} = ",
         config.type_prefix,
         node.ty.to_upper_camel_case()
     )?;
+
     let mut types = Vec::new();
-    for subtype in &node.subtypes {
-        if subtype.named {
-            types.push(format!(
-                "{}{}",
-                config.type_prefix,
-                subtype.ty.to_upper_camel_case()
-            ));
-        }
+    for subtype in named_subtypes {
+        types.push(format!(
+            "{}{}",
+            config.type_prefix,
+            subtype.ty.to_upper_camel_case()
+        ));
     }
     writeln!(w, "{}", types.join(" | "))?;
     Ok(())

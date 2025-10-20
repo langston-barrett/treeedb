@@ -1,4 +1,5 @@
 [workspace]
+resolver = "2"
 
 members = [
     "treeedb",
@@ -10,8 +11,10 @@ members = [
     "treeedb-java",
     "treeedb-javascript",
     "treeedb-rust",
-    "treeedb-souffle",
+    "treeedb-perl",
     "treeedb-php",
+    "treeedb-python",
+    "treeedb-ruby",
     "treeedb-rust",
     "treeedb-swift",
     "treeedbgen",
@@ -23,9 +26,11 @@ members = [
     "treeedbgen-souffle-go",
     "treeedbgen-souffle-java",
     "treeedbgen-souffle-javascript",
+    "treeedbgen-souffle-perl",
     "treeedbgen-souffle-php",
+    "treeedbgen-souffle-python",
+    "treeedbgen-souffle-ruby",
     "treeedbgen-souffle-rust",
-    "treeedbgen-souffle-souffle",
     "treeedbgen-souffle-swift",
 ]
 
