@@ -16,6 +16,7 @@ members = [
     "treeedb-python",
     "treeedb-ruby",
     "treeedb-rust",
+    "treeedb-souffle",
     "treeedb-swift",
     "treeedbgen",
     "treeedbgen-souffle",
@@ -31,6 +32,7 @@ members = [
     "treeedbgen-souffle-python",
     "treeedbgen-souffle-ruby",
     "treeedbgen-souffle-rust",
+    "treeedbgen-souffle-souffle",
     "treeedbgen-souffle-swift",
 ]
 

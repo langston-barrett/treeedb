@@ -10,19 +10,26 @@ use heck::ToUpperCamelCase;
 use thiserror::Error;
 use treeedbgen::Node;
 
+fn relation_name(node_ty: &str) -> &str {
+    match node_ty {
+        "true" => "true_literal",
+        "false" => "false_literal",
+        "nil" => "nil_literal",
+        "range" => "range_op",
+        "as" => "as_op",
+        "contains" => "contains_op",
+        "match" => "match_op",
+        other => other,
+    }
+}
+
 // TODO(lb): Add indices for each field
 fn node_with_fields(
     config: &PrivGenConfig,
     w: &mut impl Write,
     node: &Node,
 ) -> Result<String, io::Error> {
-    let rel_name = match node.ty.as_str() {
-        "true" => "true_literal",
-        "false" => "false_literal",
-        "nil" => "nil_literal",
-        "range" => "range_op",
-        _ => &node.ty,
-    };
+    let rel_name = relation_name(&node.ty);
     let type_name = node.ty.to_upper_camel_case();
     writeln!(w, ".type {}{} <: symbol", config.type_prefix, type_name)?;
     writeln!(

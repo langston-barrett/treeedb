@@ -26,6 +26,7 @@ jobs:
         cargo run --bin treeedbgen-souffle-python -- --output treeedb-python.dl --prefix py
         cargo run --bin treeedbgen-souffle-ruby -- --output treeedb-ruby.dl --prefix rb
         cargo run --bin treeedbgen-souffle-rust -- --output treeedb-rust.dl --prefix rs
+        cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl --prefix dl
         cargo run --bin treeedbgen-souffle-swift -- --output treeedb-swift.dl --prefix swift
 
     - name: Deps
@@ -48,6 +49,7 @@ jobs:
         cp target/x86_64-unknown-linux-musl/release/treeedb-python exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-ruby exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-rust exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-souffle exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-swift exe/
 
     - uses: ncipollo/release-action@v1
