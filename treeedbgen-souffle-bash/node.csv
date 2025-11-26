@@ -1,0 +1,61 @@
+109056338102800,program,true,false,false,false,0,268,0,0,22,0,"#!/usr/bin/env bash\nset -euo pipefail\n\n# Simple example script\n\n# Function example\ngreet() {\n    local name=""$1""\n    echo ""Hello, $name!""\n}\n\n# Main\nmain() {\n    if [[ $# -lt 1 ]]; then\n        echo ""Usage: $0 <name>""\n        exit 1\n    fi\n\n    greet ""$1""\n}\n\nmain ""$@""\n"
+109056338149032,command,true,false,false,false,258,267,21,0,21,9,"main ""$@"""
+109056338148816,string,true,false,false,false,263,267,21,5,21,9,"""$@"""
+109056338148496,simple_expansion,true,false,false,false,264,266,21,6,21,8,$@
+109056338148392,special_variable_name,true,false,false,false,265,266,21,7,21,8,@
+109056338148912,command_name,true,false,false,false,258,262,21,0,21,4,main
+109056338148192,word,true,false,false,false,258,262,21,0,21,4,main
+109056338147968,function_definition,true,false,false,false,148,256,12,0,19,1,"main() {\n    if [[ $# -lt 1 ]]; then\n        echo ""Usage: $0 <name>""\n        exit 1\n    fi\n\n    greet ""$1""\n}"
+109056338147864,compound_statement,true,false,false,false,155,256,12,7,19,1,"{\n    if [[ $# -lt 1 ]]; then\n        echo ""Usage: $0 <name>""\n        exit 1\n    fi\n\n    greet ""$1""\n}"
+109056338147408,command,true,false,false,false,244,254,18,4,18,14,"greet ""$1"""
+109056338147200,string,true,false,false,false,250,254,18,10,18,14,"""$1"""
+109056338146880,simple_expansion,true,false,false,false,251,253,18,11,18,13,$1
+109056338146776,variable_name,true,false,false,false,252,253,18,12,18,13,1
+109056338147296,command_name,true,false,false,false,244,249,18,4,18,9,greet
+109056338146576,word,true,false,false,false,244,249,18,4,18,9,greet
+109056338146464,if_statement,true,false,false,false,161,238,13,4,16,6,"if [[ $# -lt 1 ]]; then\n        echo ""Usage: $0 <name>""\n        exit 1\n    fi"
+109056338146016,command,true,false,false,false,225,231,15,8,15,14,exit 1
+109056338145808,number,true,false,false,false,230,231,15,13,15,14,1
+109056338145904,command_name,true,false,false,false,225,229,15,8,15,12,exit
+109056338145520,word,true,false,false,false,225,229,15,8,15,12,exit
+109056338145408,command,true,false,false,false,193,216,14,8,14,31,"echo ""Usage: $0 <name>"""
+109056338145200,string,true,false,false,false,198,216,14,13,14,31,"""Usage: $0 <name>"""
+109056338144768,string_content,true,false,false,false,208,215,14,23,14,30, <name>
+109056338144464,simple_expansion,true,false,false,false,206,208,14,21,14,23,$0
+109056338144120,special_variable_name,true,false,false,false,207,208,14,22,14,23,0
+109056338144000,string_content,true,false,false,false,199,206,14,14,14,21,Usage: 
+109056338145296,command_name,true,false,false,false,193,197,14,8,14,12,echo
+109056338143808,word,true,false,false,false,193,197,14,8,14,12,echo
+109056338143696,test_command,true,false,false,false,164,178,13,7,13,21,[[ $# -lt 1 ]]
+109056338143488,binary_expression,true,false,false,false,167,175,13,10,13,18,$# -lt 1
+109056338143280,number,true,false,false,false,174,175,13,17,13,18,1
+109056338143384,test_operator,true,false,false,false,170,173,13,13,13,16,-lt
+109056338142976,simple_expansion,true,false,false,false,167,169,13,10,13,12,$#
+109056338143080,special_variable_name,true,false,false,false,168,169,13,11,13,12,#
+109056338147840,word,true,false,false,false,148,152,12,0,12,4,main
+109056338148088,comment,true,true,false,false,141,147,11,0,11,6,# Main
+109056338142640,function_definition,true,false,false,false,83,139,6,0,9,1,"greet() {\n    local name=""$1""\n    echo ""Hello, $name!""\n}"
+109056338101400,compound_statement,true,false,false,false,91,139,6,8,9,1,"{\n    local name=""$1""\n    echo ""Hello, $name!""\n}"
+109056338142208,command,true,false,false,false,117,137,8,4,8,24,"echo ""Hello, $name!"""
+109056338142000,string,true,false,false,false,122,137,8,9,8,24,"""Hello, $name!"""
+109056338141568,string_content,true,false,false,false,135,136,8,22,8,23,!
+109056338141248,simple_expansion,true,false,false,false,130,135,8,17,8,22,$name
+109056338141144,variable_name,true,false,false,false,131,135,8,18,8,22,name
+109056338140928,string_content,true,false,false,false,123,130,8,10,8,17,"Hello, "
+109056338142096,command_name,true,false,false,false,117,121,8,4,8,8,echo
+109056338140736,word,true,false,false,false,117,121,8,4,8,8,echo
+109056338140624,declaration_command,true,false,false,false,97,112,7,4,7,19,"local name=""$1"""
+109056338106440,variable_assignment,true,false,false,false,103,112,7,10,7,19,"name=""$1"""
+109056338113936,string,true,false,false,false,108,112,7,15,7,19,"""$1"""
+109056338112832,simple_expansion,true,false,false,false,109,111,7,16,7,18,$1
+109056338113000,variable_name,true,false,false,false,110,111,7,17,7,18,1
+109056338113920,variable_name,true,false,false,false,103,107,7,10,7,14,name
+109056338101376,word,true,false,false,false,83,88,6,0,6,5,greet
+109056338142768,comment,true,true,false,false,64,82,5,0,5,18,# Function example
+109056338142760,comment,true,true,false,false,39,62,3,0,3,23,# Simple example script
+109056338112512,command,true,false,false,false,20,37,1,0,1,17,set -euo pipefail
+109056338111488,word,true,false,false,false,29,37,1,9,1,17,pipefail
+109056338111056,word,true,false,false,false,24,28,1,4,1,8,-euo
+109056338105280,command_name,true,false,false,false,20,23,1,0,1,3,set
+109056338110720,word,true,false,false,false,20,23,1,0,1,3,set
+109056338149232,comment,true,true,false,false,0,19,0,0,0,19,#!/usr/bin/env bash
