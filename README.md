@@ -7,6 +7,7 @@ and emits facts that populate those relations.
 
 `treeedb` currently supports analysis of these languages:
 
+- Bash
 - C
 - C++
 - C#
