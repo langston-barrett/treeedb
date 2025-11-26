@@ -542,6 +542,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tree-sitter-bash"
+version = "0.25.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "871b0606e667e98a1237ebdc1b0d7056e0aebfdc3141d12b399865d4cb6ed8a6"
+dependencies = [
+ "cc",
+ "tree-sitter-language",
+]
+
+[[package]]
 name = "tree-sitter-c"
 version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -715,6 +725,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "treeedb-bash"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "tree-sitter-bash",
+ "treeedb",
+]
+
+[[package]]
 name = "treeedb-c"
 version = "0.1.0"
 dependencies = [
@@ -859,6 +878,18 @@ dependencies = [
  "serde_json",
  "thiserror",
  "treeedbgen",
+]
+
+[[package]]
+name = "treeedbgen-souffle-bash"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "assert_cmd",
+ "predicates",
+ "tempfile",
+ "tree-sitter-bash",
+ "treeedbgen-souffle",
 ]
 
 [[package]]

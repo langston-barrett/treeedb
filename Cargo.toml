@@ -3,6 +3,7 @@ resolver = "2"
 
 members = [
     "treeedb",
+    "treeedb-bash",
     "treeedb-c",
     "treeedb-cpp",
     "treeedb-crystal",
@@ -20,6 +21,7 @@ members = [
     "treeedb-swift",
     "treeedbgen",
     "treeedbgen-souffle",
+    "treeedbgen-souffle-bash",
     "treeedbgen-souffle-c",
     "treeedbgen-souffle-cpp",
     "treeedbgen-souffle-crystal",
