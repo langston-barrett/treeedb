@@ -15,6 +15,7 @@ jobs:
 
     - name: Run Datalog generators
       run: |
+        cargo run --bin treeedbgen-souffle-bash --output treeedb-bash.dl --prefix sh
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
         cargo run --bin treeedbgen-souffle-cpp -- --output treeedb-cpp.dl --prefix cpp
         cargo run --bin treeedbgen-souffle-crystal -- --output treeedb-crystal.dl --prefix crystal
@@ -38,6 +39,7 @@ jobs:
       run: |
         make static
         mkdir exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-bash exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-c exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-cpp exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-crystal exe/
@@ -55,7 +57,7 @@ jobs:
     - uses: ncipollo/release-action@v1
       if: ${{ startsWith(github.ref, 'refs/tags/v') }}
       with:
-        artifacts: "exe/treeedb-c,exe/treeedb-cpp,exe/treeedb-crystal,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-perl,exe/treeedb-php,exe/treeedb-python,exe/treeedb-ruby,exe/treeedb-rust,exe/treeedb-swift,treeedb-c.dl,treeedb-cpp.dl,treeedb-crystal.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-perl.dl,treeedb-php.dl,treeedb-python.dl,treeedb-ruby.dl,treeedb-rust.dl,treeedb-swift.dl"
+        artifacts: "exe/treeedb-bash,exe/treeedb-c,exe/treeedb-cpp,exe/treeedb-crystal,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-perl,exe/treeedb-php,exe/treeedb-python,exe/treeedb-ruby,exe/treeedb-rust,exe/treeedb-swift,treeedb-bash.dl,treeedb-c.dl,treeedb-cpp.dl,treeedb-crystal.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-perl.dl,treeedb-php.dl,treeedb-python.dl,treeedb-ruby.dl,treeedb-rust.dl,treeedb-swift.dl"
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}
