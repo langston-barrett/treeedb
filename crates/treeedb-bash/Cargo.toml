@@ -1,0 +1,18 @@
+[package]
+name = "treeedb-bash"
+version = "0.1.0"
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Generate Datalog facts from Bash scripts"
+keywords = ["datalog", "Bash", "parsing", "souffle"]
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1.0"
+treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
+tree-sitter-bash = { version = "0.25" }

@@ -1,25 +1,108 @@
 [workspace]
+resolver = "2"
 
 members = [
-    "treeedb",
-    "treeedb-c",
-    "treeedb-csharp",
-    "treeedb-java",
-    "treeedb-javascript",
-    "treeedb-rust",
-    "treeedb-souffle",
-    "treeedb-rust",
-    "treeedb-swift",
-    "treeedbgen",
-    "treeedbgen-souffle",
-    "treeedbgen-souffle-c",
-    "treeedbgen-souffle-csharp",
-    "treeedbgen-souffle-java",
-    "treeedbgen-souffle-javascript",
-    "treeedbgen-souffle-rust",
-    "treeedbgen-souffle-souffle",
-    "treeedbgen-souffle-swift",
+    "crates/treeedb",
+    "crates/treeedb-bash",
+    "crates/treeedb-c",
+    "crates/treeedb-cpp",
+    "crates/treeedb-crystal",
+    "crates/treeedb-csharp",
+    "crates/treeedb-go",
+    "crates/treeedb-java",
+    "crates/treeedb-javascript",
+    "crates/treeedb-rust",
+    "crates/treeedb-perl",
+    "crates/treeedb-php",
+    "crates/treeedb-python",
+    "crates/treeedb-ruby",
+    "crates/treeedb-rust",
+    "crates/treeedb-souffle",
+    "crates/treeedb-swift",
+    "crates/treeedbgen",
+    "crates/treeedbgen-souffle",
+    "crates/treeedbgen-souffle-bash",
+    "crates/treeedbgen-souffle-c",
+    "crates/treeedbgen-souffle-cpp",
+    "crates/treeedbgen-souffle-crystal",
+    "crates/treeedbgen-souffle-csharp",
+    "crates/treeedbgen-souffle-go",
+    "crates/treeedbgen-souffle-java",
+    "crates/treeedbgen-souffle-javascript",
+    "crates/treeedbgen-souffle-perl",
+    "crates/treeedbgen-souffle-php",
+    "crates/treeedbgen-souffle-python",
+    "crates/treeedbgen-souffle-ruby",
+    "crates/treeedbgen-souffle-rust",
+    "crates/treeedbgen-souffle-souffle",
+    "crates/treeedbgen-souffle-swift",
 ]
+
+[workspace.package]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+edition = "2024"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+readme = "README.md"
 
 [profile.release]
 lto = "thin"
+
+[workspace.lints.clippy]
+# pedantic = { level = "warn", priority = -1 }
+case_sensitive_file_extension_comparisons = "allow"
+dbg_macro = "warn"
+explicit_iter_loop = "warn"
+format_push_string = "warn"
+ignore_without_reason = "warn"
+implicit_clone = "warn"
+implicit_hasher = "allow"
+inefficient_to_string = "warn"
+manual_let_else = "warn"
+map_unwrap_or = "warn"
+needless_borrow = "warn"
+needless_pass_by_value = "allow"
+needless_raw_string_hashes = "allow"
+redundant_else = "warn"
+return_self_not_must_use = "warn"
+semicolon_if_nothing_returned = "warn"
+todo = "warn"
+too_many_lines = "allow"
+trivially_copy_pass_by_ref = "warn"
+unimplemented = "warn"
+uninlined_format_args = "warn"
+unreadable_literal = "warn"
+use_debug = "warn"
+
+[workspace.lints.rust]
+absolute_paths_not_starting_with_crate = "warn"
+dead_code = "warn"
+elided_lifetimes_in_paths = "warn"
+explicit_outlives_requirements = "warn"
+keyword_idents_2018 = "warn"
+keyword_idents_2024 = "warn"
+let_underscore_drop = "warn"
+macro_use_extern_crate = "warn"
+meta_variable_misuse = "warn"
+missing_abi = "warn"
+missing_debug_implementations = "warn"
+missing_unsafe_on_extern = "warn"
+non_ascii_idents = "warn"
+noop_method_call = "warn"
+rust_2021_incompatible_closure_captures = "warn"
+rust_2021_incompatible_or_patterns = "warn"
+rust_2021_prefixes_incompatible_syntax = "warn"
+rust_2021_prelude_collisions = "warn"
+single_use_lifetimes = "warn"
+trivial_casts = "warn"
+trivial_numeric_casts = "warn"
+unreachable_pub = "warn"
+unsafe_op_in_unsafe_fn = "warn"
+unstable_features = "warn"
+unused_extern_crates = "warn"
+unused_import_braces = "warn"
+unused_lifetimes = "warn"
+unused_macro_rules = "warn"
+unused_qualifications = "warn"
+variant_size_differences = "warn"

@@ -41,11 +41,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3
-    - run: env RUSTFLAGS="@$PWD/rustc-flags" make build
     - name: Deps
+      env:
+        DEBIAN_FRONTEND: noninteractive
+        SOUFFLE_VERSION: 2.5
       run: |
-        sudo wget https://souffle-lang.github.io/ppa/souffle-key.public -O /usr/share/keyrings/souffle-archive-keyring.gpg
-        echo "deb [signed-by=/usr/share/keyrings/souffle-archive-keyring.gpg] https://souffle-lang.github.io/ppa/ubuntu/ stable main" | sudo tee /etc/apt/sources.list.d/souffle.list
-        sudo apt update
-        sudo apt install souffle=2.3
-    - run: env RUSTFLAGS="@$PWD/rustc-flags" make test
+        wget -q -O souffle.deb https://github.com/souffle-lang/souffle/releases/download/${SOUFFLE_VERSION}/x86_64-ubuntu-2204-souffle-${SOUFFLE_VERSION}-Linux.deb
+        sudo apt-get install -y --no-install-recommends ./souffle.deb
+        rm souffle.deb
+    - run: make test

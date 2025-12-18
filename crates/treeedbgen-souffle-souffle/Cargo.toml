@@ -1,0 +1,23 @@
+[package]
+name = "treeedbgen-souffle-souffle"
+version = "0.1.0"
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Generate Soufflé types and relations from the Soufflé tree-sitter grammar"
+keywords = ["datalog", "java", "parsing", "souffle"]
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"
+treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+tree-sitter-souffle = { version = "0.4.0" }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3"
