@@ -43,7 +43,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3
-    - run: make build
     - name: Deps
       env:
         DEBIAN_FRONTEND: noninteractive
