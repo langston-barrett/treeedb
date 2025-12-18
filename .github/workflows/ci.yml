@@ -38,8 +38,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    env:
-      RUSTFLAGS: "@${{ github.workspace }}/rustc-flags"
     steps:
     - uses: actions/checkout@v4
     - uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3
