@@ -41,7 +41,7 @@ members = [
 [workspace.package]
 authors = ["Langston Barrett <langston.barrett@gmail.com>"]
 license = "MIT"
-edition = "2021"
+edition = "2024"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 readme = "README.md"
