@@ -7,10 +7,14 @@ and emits facts that populate those relations.
 
 `treeedb` currently supports analysis of these languages:
 
+- Bash
 - C
+- C++
 - C#
+- Crystal
 - Java
 - JavaScript
+- PHP
 - Rust
 - Soufflé
 - Swift
@@ -179,21 +183,27 @@ fitting in the same niche as these tools.
 
 - [`treeedb`](./treeedb): Generate Datalog facts from tree-sitter parse trees
 - [`treeedb-c`](./treeedb-c): Generate Datalog facts from C source code
+- [`treeedb-cpp`](./treeedb-cpp): Generate Datalog facts from C++ source code
+- [`treeedb-crystal`](./treeedb-crystal): Generate Datalog facts from Crystal source code
 - [`treeedb-csharp`](./treeedb-csharp): Generate Datalog facts from C# source code
-- [`treeedbgen`](./treeedbgen): Parse node-types.json from a tree-sitter grammar
-- [`treeedbgen-souffle`](./treeedbgen-souffle): Generate Soufflé types and relations from tree-sitter grammars
-- [`treeedbgen-souffle-c`](./treeedbgen-souffle-c): Generate Soufflé types and relations from the C tree-sitter grammar
-- [`treeedbgen-souffle-csharp`](./treeedbgen-souffle-csharp): Generate Soufflé types and relations from the C# tree-sitter grammar
-- [`treeedbgen-souffle-java`](./treeedbgen-souffle-java): Generate Soufflé types and relations from the Java tree-sitter grammar
-- [`treeedbgen-souffle-javascript`](./treeedbgen-souffle-javascript): Generate Soufflé types and relations from the JavaScript tree-sitter grammar
-- [`treeedbgen-souffle-rust`](./treeedbgen-souffle-rust): Generate Soufflé types and relations from the Rust tree-sitter grammar
-- [`treeedbgen-souffle-souffle`](./treeedbgen-souffle-souffle): Generate Soufflé types and relations from the Soufflé tree-sitter grammar
-- [`treeedbgen-souffle-swift`](./treeedbgen-souffle-swift): Generate Soufflé types and relations from the Swift tree-sitter grammar
 - [`treeedb-java`](./treeedb-java): Generate Datalog facts from Java source code
 - [`treeedb-javascript`](./treeedb-javascript): Generate Datalog facts from JavaScript source code
+- [`treeedb-php`](./treeedb-php): Generate Datalog facts from PHP source code
 - [`treeedb-rust`](./treeedb-rust): Generate Datalog facts from Rust source code
 - [`treeedb-souffle`](./treeedb-souffle): Generate Datalog facts from Soufflé source code
 - [`treeedb-swift`](./treeedb-swift): Generate Datalog facts from Swift source code
+- [`treeedbgen`](./treeedbgen): Parse node-types.json from a tree-sitter grammar
+- [`treeedbgen-souffle`](./treeedbgen-souffle): Generate Soufflé types and relations from tree-sitter grammars
+- [`treeedbgen-souffle-c`](./treeedbgen-souffle-c): Generate Soufflé types and relations from the C tree-sitter grammar
+- [`treeedbgen-souffle-cpp`](./treeedbgen-souffle-cpp): Generate Soufflé types and relations from the C++ tree-sitter grammar
+- [`treeedbgen-souffle-crystal`](./treeedbgen-souffle-crystal): Generate Soufflé types and relations from the Crystal tree-sitter grammar
+- [`treeedbgen-souffle-csharp`](./treeedbgen-souffle-csharp): Generate Soufflé types and relations from the C# tree-sitter grammar
+- [`treeedbgen-souffle-java`](./treeedbgen-souffle-java): Generate Soufflé types and relations from the Java tree-sitter grammar
+- [`treeedbgen-souffle-javascript`](./treeedbgen-souffle-javascript): Generate Soufflé types and relations from the JavaScript tree-sitter grammar
+- [`treeedbgen-souffle-php`](./treeedbgen-souffle-php): Generate Soufflé types and relations from the PHP tree-sitter grammar
+- [`treeedbgen-souffle-rust`](./treeedbgen-souffle-rust): Generate Soufflé types and relations from the Rust tree-sitter grammar
+- [`treeedbgen-souffle-souffle`](./treeedbgen-souffle-souffle): Generate Soufflé types and relations from the Soufflé tree-sitter grammar
+- [`treeedbgen-souffle-swift`](./treeedbgen-souffle-swift): Generate Soufflé types and relations from the Swift tree-sitter grammar
 
 ## Contributing
 

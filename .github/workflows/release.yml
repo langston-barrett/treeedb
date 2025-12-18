@@ -15,10 +15,17 @@ jobs:
 
     - name: Run Datalog generators
       run: |
+        cargo run --bin treeedbgen-souffle-bash --output treeedb-bash.dl --prefix sh
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
+        cargo run --bin treeedbgen-souffle-cpp -- --output treeedb-cpp.dl --prefix cpp
+        cargo run --bin treeedbgen-souffle-crystal -- --output treeedb-crystal.dl --prefix crystal
         cargo run --bin treeedbgen-souffle-csharp -- --output treeedb-csharp.dl --prefix csharp
         cargo run --bin treeedbgen-souffle-java -- --output treeedb-java.dl --prefix java
         cargo run --bin treeedbgen-souffle-javascript -- --output treeedb-javascript.dl --prefix js
+        cargo run --bin treeedbgen-souffle-perl -- --output treeedb-perl.dl --prefix pl
+        cargo run --bin treeedbgen-souffle-php -- --output treeedb-php.dl --prefix php
+        cargo run --bin treeedbgen-souffle-python -- --output treeedb-python.dl --prefix py
+        cargo run --bin treeedbgen-souffle-ruby -- --output treeedb-ruby.dl --prefix rb
         cargo run --bin treeedbgen-souffle-rust -- --output treeedb-rust.dl --prefix rs
         cargo run --bin treeedbgen-souffle-souffle -- --output treeedb-souffle.dl --prefix dl
         cargo run --bin treeedbgen-souffle-swift -- --output treeedb-swift.dl --prefix swift
@@ -32,10 +39,17 @@ jobs:
       run: |
         make static
         mkdir exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-bash exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-c exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-cpp exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-crystal exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-csharp exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-java exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-javascript exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-perl exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-php exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-python exe/
+        cp target/x86_64-unknown-linux-musl/release/treeedb-ruby exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-rust exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-souffle exe/
         cp target/x86_64-unknown-linux-musl/release/treeedb-swift exe/
@@ -43,7 +57,7 @@ jobs:
     - uses: ncipollo/release-action@v1
       if: ${{ startsWith(github.ref, 'refs/tags/v') }}
       with:
-        artifacts: "exe/treeedb-c,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-rust,exe/treeedb-souffle,exe/treeedb-swift,treeedb-c.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-rust.dl,treeedb-souffle.dl,treeedb-swift.dl"
+        artifacts: "exe/treeedb-bash,exe/treeedb-c,exe/treeedb-cpp,exe/treeedb-crystal,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-perl,exe/treeedb-php,exe/treeedb-python,exe/treeedb-ruby,exe/treeedb-rust,exe/treeedb-swift,treeedb-bash.dl,treeedb-c.dl,treeedb-cpp.dl,treeedb-crystal.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-perl.dl,treeedb-php.dl,treeedb-python.dl,treeedb-ruby.dl,treeedb-rust.dl,treeedb-swift.dl"
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}

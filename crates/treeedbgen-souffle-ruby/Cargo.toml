@@ -1,0 +1,23 @@
+[package]
+name = "treeedbgen-souffle-ruby"
+version = "0.1.0"
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Generate Soufflé types and relations from the Ruby tree-sitter grammar"
+keywords = ["datalog", "ruby", "parsing", "souffle"]
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"
+treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+tree-sitter-ruby = { version = "0.23" }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3"
