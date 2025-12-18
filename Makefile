@@ -41,7 +41,12 @@ static:
 
 .PHONY: test
 test:
-	$(CARGO) test --locked $(CARGO_FLAGS)
+	$(CARGO) build --locked $(CARGO_FLAGS) --workspace \
+		--exclude treeedbgen-souffle-python \
+		--exclude treeedbgen-souffle-ruby
+	$(CARGO) test --locked $(CARGO_FLAGS) --workspace \
+		--exclude treeedbgen-souffle-python \
+		--exclude treeedbgen-souffle-ruby
 
 .PHONY: all
 all: build check fmt lint test
