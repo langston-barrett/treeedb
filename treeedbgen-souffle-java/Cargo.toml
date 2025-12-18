@@ -1,14 +1,13 @@
 [package]
 name = "treeedbgen-souffle-java"
 version = "0.1.0"
-edition = "2021"
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
 description = "Generate Soufflé types and relations from the Java tree-sitter grammar"
 keywords = ["datalog", "java", "parsing", "souffle"]
-authors = ["Langston Barrett <langston.barrett@gmail.com>"]
-license = "MIT"
-readme = "../README.md"
-homepage = "https://github.com/langston-barrett/treeedb"
-repository = "https://github.com/langston-barrett/treeedb"
 
 [lints]
 workspace = true
