@@ -10,6 +10,9 @@ readme = "../README.md"
 homepage = "https://github.com/langston-barrett/treeedb"
 repository = "https://github.com/langston-barrett/treeedb"
 
+[lints]
+workspace = true
+
 [dependencies]
 anyhow = "1.0"
 treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
