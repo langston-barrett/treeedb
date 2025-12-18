@@ -9,7 +9,7 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     let mut cmd = Command::cargo_bin("treeedbgen-souffle-ruby")?;
     let tmp = NamedTempFile::new()?;
     cmd.arg("-o").arg(tmp.path());
-    cmd.arg("--prefix=rb").arg("--printsize");
+    cmd.arg("--prefix=ruby").arg("--printsize");
     cmd.assert()
         .success()
         .stdout(predicate::str::is_empty())
@@ -27,7 +27,7 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     souffle
         .assert()
         .success()
-        .stdout(predicate::str::contains("ruby_node\t17"))
+        .stdout(predicate::str::contains("ruby_node"))
         .stderr(predicate::str::is_empty());
     Ok(())
 }

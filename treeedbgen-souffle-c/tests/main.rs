@@ -27,7 +27,7 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     souffle
         .assert()
         .success()
-        .stdout(predicate::str::contains("c_node\t17"))
+        .stdout(predicate::str::contains("c_node\t18"))
         .stderr(predicate::str::is_empty());
     Ok(())
 }

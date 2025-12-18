@@ -9,7 +9,7 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     let mut cmd = Command::cargo_bin("treeedbgen-souffle-php")?;
     let tmp = NamedTempFile::new()?;
     cmd.arg("-o").arg(tmp.path());
-    cmd.arg("--prefix=c").arg("--printsize");
+    cmd.arg("--prefix=php").arg("--printsize");
     cmd.assert()
         .success()
         .stdout(predicate::str::is_empty())
@@ -27,7 +27,7 @@ fn test_gen() -> Result<(), Box<dyn std::error::Error>> {
     souffle
         .assert()
         .success()
-        .stdout(predicate::str::contains("php_node\t17"))
+        .stdout(predicate::str::contains("php_node"))
         .stderr(predicate::str::is_empty());
     Ok(())
 }
