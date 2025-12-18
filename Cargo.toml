@@ -38,6 +38,14 @@ members = [
     "treeedbgen-souffle-swift",
 ]
 
+[workspace.package]
+authors = ["Langston Barrett <langston.barrett@gmail.com>"]
+license = "MIT"
+edition = "2021"
+homepage = "https://github.com/langston-barrett/treeedb"
+repository = "https://github.com/langston-barrett/treeedb"
+readme = "README.md"
+
 [profile.release]
 lto = "thin"
 
