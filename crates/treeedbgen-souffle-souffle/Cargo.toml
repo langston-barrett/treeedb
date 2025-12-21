@@ -1,6 +1,6 @@
 [package]
 name = "treeedbgen-souffle-souffle"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 authors.workspace = true
 license.workspace = true
 edition.workspace = true
@@ -14,7 +14,7 @@ workspace = true
 
 [dependencies]
 anyhow = "1"
-treeedbgen-souffle = { version = "0.1.0", path = "../treeedbgen-souffle", features = ["cli"] }
+treeedbgen-souffle = { version = "0.2.0-rc.1", path = "../treeedbgen-souffle", features = ["cli"] }
 tree-sitter-souffle = { version = "0.4.0" }
 
 [dev-dependencies]
