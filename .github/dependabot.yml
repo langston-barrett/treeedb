@@ -3,21 +3,14 @@ updates:
   - package-ecosystem: "cargo"
     directory: "/"
     schedule:
-      interval: "monthly"
-    assignees:
-      - "langston-barrett"
-    labels:
-      - "infrastructure"
-    reviewers:
-      - "langston-barrett"
+      interval: "weekly"
+    # See https://docs.zizmor.sh/audits/#dependabot-cooldown
+    cooldown:
+      default-days: 4
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
-    assignees:
-      - "langston-barrett"
-    labels:
-      - "infrastructure"
-    reviewers:
-      - "langston-barrett"
+      interval: "weekly"
+    cooldown:
+      default-days: 4
