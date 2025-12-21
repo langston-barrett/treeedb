@@ -15,7 +15,7 @@ jobs:
 
     - name: Run Datalog generators
       run: |
-        cargo run --bin treeedbgen-souffle-bash --output treeedb-bash.dl --prefix sh
+        cargo run --bin treeedbgen-souffle-bash -- --output treeedb-bash.dl --prefix sh
         cargo run --bin treeedbgen-souffle-c -- --output treeedb-c.dl --prefix c
         cargo run --bin treeedbgen-souffle-cpp -- --output treeedb-cpp.dl --prefix cpp
         cargo run --bin treeedbgen-souffle-crystal -- --output treeedb-crystal.dl --prefix crystal
@@ -57,16 +57,18 @@ jobs:
     - uses: ncipollo/release-action@v1
       if: ${{ startsWith(github.ref, 'refs/tags/v') }}
       with:
-        artifacts: "exe/treeedb-bash,exe/treeedb-c,exe/treeedb-cpp,exe/treeedb-crystal,exe/treeedb-csharp,exe/treeedb-java,exe/treeedb-javascript,exe/treeedb-perl,exe/treeedb-php,exe/treeedb-python,exe/treeedb-ruby,exe/treeedb-rust,exe/treeedb-swift,treeedb-bash.dl,treeedb-c.dl,treeedb-cpp.dl,treeedb-crystal.dl,treeedb-csharp.dl,treeedb-java.dl,treeedb-javascript.dl,treeedb-perl.dl,treeedb-php.dl,treeedb-python.dl,treeedb-ruby.dl,treeedb-rust.dl,treeedb-swift.dl"
+        artifacts: "exe/treeedb-*,treeedb-*.dl"
         artifactErrorsFailBuild: true
         draft: true
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    # TODO(#22):
-    # - name: Publish to crates.io
-    #   env:
-    #     CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
-    #     # Only push on actual release tags
-    #     PUSH: ${{ startsWith(github.ref, 'refs/tags/v') }}
-    #   run: |
-    #     cargo publish
+    - name: Publish to crates.io
+      env:
+        CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
+        PUSH: ${{ startsWith(github.ref, 'refs/tags/v') }}
+      run: | # zizmor: ignore[use-trusted-publishing] TODO
+        if [[ "${PUSH}" == true ]]; then
+          cargo publish --token="${CRATES_IO_TOKEN}" --workspace --exclude treeedb-crystal --exclude treeedbgen-souffle-crystal --exclude treeedb-perl --exclude treeedbgen-souffle-perl
+        else
+          cargo publish --dry-run --token="${CRATES_IO_TOKEN}" --workspace --exclude treeedb-crystal --exclude treeedbgen-souffle-crystal --exclude treeedb-perl --exclude treeedbgen-souffle-perl
+        fi

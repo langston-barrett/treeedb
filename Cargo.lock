@@ -715,7 +715,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "clap",
@@ -726,7 +726,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-bash"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-bash",
@@ -735,7 +735,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-c"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-c",
@@ -744,7 +744,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-cpp"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-cpp",
@@ -753,7 +753,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-crystal"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-crystal",
@@ -762,7 +762,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-csharp"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-c-sharp",
@@ -771,7 +771,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-go"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-go",
@@ -780,7 +780,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-java"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-java 0.23.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -789,7 +789,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-javascript"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-javascript",
@@ -798,7 +798,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-perl"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-perl",
@@ -807,7 +807,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-php"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-php",
@@ -816,7 +816,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-python"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-python",
@@ -825,7 +825,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-ruby"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-ruby",
@@ -834,7 +834,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-rust"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-rust",
@@ -843,7 +843,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-souffle"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-souffle 0.5.0",
@@ -852,7 +852,7 @@ dependencies = [
 
 [[package]]
 name = "treeedb-swift"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "tree-sitter-swift",
@@ -861,7 +861,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "clap",
  "serde",
@@ -870,7 +870,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "clap",
@@ -882,7 +882,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-bash"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -894,7 +894,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-c"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -906,7 +906,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-cpp"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -918,7 +918,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-crystal"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -930,7 +930,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-csharp"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -942,7 +942,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-go"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -954,7 +954,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-java"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -966,7 +966,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-javascript"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -978,7 +978,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-perl"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -990,7 +990,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-php"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -1002,7 +1002,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-python"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -1014,7 +1014,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-ruby"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -1026,7 +1026,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-rust"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -1038,7 +1038,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-souffle"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -1050,7 +1050,7 @@ dependencies = [
 
 [[package]]
 name = "treeedbgen-souffle-swift"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
  "assert_cmd",

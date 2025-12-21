@@ -1,6 +1,6 @@
 [package]
 name = "treeedb-perl"
-version = "0.1.0"
+version = "0.2.0-rc.1"
 authors.workspace = true
 license.workspace = true
 edition.workspace = true
@@ -14,6 +14,6 @@ workspace = true
 
 [dependencies]
 anyhow = "1.0"
-treeedb = { version = "0.1.0", path = "../treeedb", features = ["cli"] }
+treeedb = { version = "0.2.0-rc.1", path = "../treeedb", features = ["cli"] }
 tree-sitter-perl = { git = "https://github.com/tree-sitter-perl/tree-sitter-perl", branch = "release" }
 
