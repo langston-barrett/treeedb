@@ -15,7 +15,7 @@ workspace = true
 [dependencies]
 anyhow = "1"
 treeedbgen-souffle = { version = "0.2.0-rc.1", path = "../treeedbgen-souffle", features = ["cli"] }
-tree-sitter-souffle = { version = "0.4.0" }
+tree-sitter-souffle = { version = "0.5.0" }
 
 [dev-dependencies]
 assert_cmd = "2.1"
