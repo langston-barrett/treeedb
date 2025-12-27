@@ -519,16 +519,6 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter"
-version = "0.20.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e747b1f9b7b931ed39a548c1fae149101497de3c1fc8d9e18c62c1a66c683d3d"
-dependencies = [
- "cc",
- "regex",
-]
-
-[[package]]
-name = "tree-sitter"
 version = "0.26.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "974d205cc395652cfa8b37daa053fe56eebd429acf8dc055503fee648dae981e"
@@ -685,16 +675,6 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-souffle"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10f4f25aa2790a524866eac9f872de86b8bbc01412f39402c2cef3b9fe1dff8b"
-dependencies = [
- "cc",
- "tree-sitter 0.20.10",
-]
-
-[[package]]
-name = "tree-sitter-souffle"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7eeb3eea344296b94d13df8de804147aba98c831978bd7321eaa3e3934cbcbbc"
@@ -720,7 +700,7 @@ dependencies = [
  "anyhow",
  "clap",
  "csv",
- "tree-sitter 0.26.3",
+ "tree-sitter",
  "tree-sitter-language",
 ]
 
@@ -846,7 +826,7 @@ name = "treeedb-souffle"
 version = "0.2.0-rc.1"
 dependencies = [
  "anyhow",
- "tree-sitter-souffle 0.5.0",
+ "tree-sitter-souffle",
  "treeedb",
 ]
 
@@ -1044,7 +1024,7 @@ dependencies = [
  "assert_cmd",
  "predicates",
  "tempfile",
- "tree-sitter-souffle 0.4.0",
+ "tree-sitter-souffle",
  "treeedbgen-souffle",
 ]
 
