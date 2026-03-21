@@ -634,7 +634,7 @@ checksum = "009994f150cc0cd50ff54917d5bc8bffe8cad10ca10d81c34da2ec421ae61782"
 [[package]]
 name = "tree-sitter-perl"
 version = "0.0.1"
-source = "git+https://github.com/tree-sitter-perl/tree-sitter-perl?branch=release#0c24d001dd1921e418fb933d208a7bd7dd3f923a"
+source = "git+https://github.com/tree-sitter-perl/tree-sitter-perl?branch=release#6e8457739ef08561a2dc029ab44c89c3268adc86"
 dependencies = [
  "cc",
  "tree-sitter-language",
