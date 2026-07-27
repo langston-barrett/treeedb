@@ -83,8 +83,7 @@ fn node_with_fields(
         }
 
         // TODO(#18): Configurable field prefix/suffix
-        let field_relation_name =
-            format!("{}{}_{}_f", config.relation_prefix, &node.ty, field_name);
+        let field_relation_name = format!("{}{}_{}_f", config.relation_prefix, node.ty, field_name);
         writeln!(
             w,
             ".decl {}(x: {}{}, y: {})",
@@ -108,7 +107,7 @@ fn node_with_fields(
             let child_type_name =
                 format!("{}{}", config.type_prefix, child.ty.to_upper_camel_case());
             let child_relation_name =
-                format!("{}{}_{}_c", config.relation_prefix, &node.ty, child.ty);
+                format!("{}{}_{}_c", config.relation_prefix, node.ty, child.ty);
             writeln!(
                 w,
                 ".decl {}(x: {}{}, y: {})",
