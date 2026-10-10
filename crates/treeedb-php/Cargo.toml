@@ -15,4 +15,4 @@ workspace = true
 [dependencies]
 anyhow = "1.0"
 treeedb = { version = "0.2.0-rc.1", path = "../treeedb", features = ["cli"] }
-tree-sitter-php = { version = "0.24" }
+tree-sitter-php = { version = "0.25" }

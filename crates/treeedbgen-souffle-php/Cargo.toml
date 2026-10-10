@@ -15,7 +15,7 @@ workspace = true
 [dependencies]
 anyhow = "1"
 treeedbgen-souffle = { version = "0.2.0-rc.1", path = "../treeedbgen-souffle", features = ["cli"] }
-tree-sitter-php = "0.24"
+tree-sitter-php = "0.25"
 
 [dev-dependencies]
 assert_cmd = "2.2"
